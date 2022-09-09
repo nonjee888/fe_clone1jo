@@ -7,7 +7,7 @@ import MovieChartList from "../pages/MovieChartList";
 import MyMovieList from "../pages/MyMovieList";
 import Search from "../pages/Search";
 import Admin from "../pages/Admin";
-import { Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function Router() {
   return (
@@ -22,7 +22,7 @@ function Router() {
           <Route path="/movielist" element={<MyMovieList />} exact />
           <Route path="/search" element={<Search />} exact />
           <Route path="/admin" element={<Admin />} exact />
-          <Route path="*" element={<div>없는 페이지입니다.</div>} />
+          <Route path="*" element={<div>없는 페이지입니다.</div>}  />
         </Routes>
       </BrowserRouter>
     </div>
