@@ -1,7 +1,12 @@
 import React from "react";
+import MyWatchedMovie from "../components/mymovielist/MyWatchedMovie";
 
 function MyMovieList() {
-  return <div>MyMovieList</div>;
+  return (
+    <div>
+      <MyWatchedMovie />
+    </div>
+  );
 }
 
 export default MyMovieList;

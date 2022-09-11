@@ -1,4 +1,5 @@
 import React from "react";
+import ReactPlayer from "react-player";
 import styled from "styled-components";
 
 function MovieTrailer() {
@@ -8,13 +9,32 @@ function MovieTrailer() {
         <StMovieBox>
           <StContents>
             <StVideoWrap>
-              ::before
-              <video id="hz" autoplay muted loop>
+              <ReactPlayer
+                className="react-player"
+                url={
+                  "https://adimg.cgv.co.kr/images/202209/beautiful/beautiful_1080x608.mp4"
+                } // 플레이어 url
+                width="980px" // 플레이어 크기 (가로)
+                height="580px" // 플레이어 크기 (세로)
+                playing={true} // 자동 재생 on
+                muted={true} // 자동 재생 on
+                light={false} // 플레이어 모드
+                pip={true} // pip 모드 설정 여부
+              />
+              {/* <Video id="hz" autoplay muted playsInline>
                 <source
                   src="https://adimg.cgv.co.kr/images/202209/beautiful/beautiful_1080x608.mp4"
                   type="video/mp4"
                 />
-              </video>
+              </Video> */}
+              <Videocontroller>
+                <Strong>인생은 아름다워</Strong>
+                <Span>
+                  "한번보고 두번보고 자꾸만 보고싶네!"
+                  <br />
+                  "흥 포발! 주크박스 예고편GO"
+                </Span>
+              </Videocontroller>
             </StVideoWrap>
           </StContents>
         </StMovieBox>
@@ -60,10 +80,35 @@ const StVideoWrap = styled.div`
   height: 100%;
 `;
 
-const Video = styled.div`
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transform: scale(1.35);
-  z-index: 1;
+// const Video = styled.video`
+//   margin-top: 30px;
+//   position: relative;
+//   width: 100%;
+//   height: 100%;
+//   transform: scale(1.35);
+//   z-index: 1;
+//   background-size: cover;
+// `;
+const Strong = styled.strong`
+  display: block;
+  font-weight: 900;
+  font-size: 40px;
+  color: #fff;
+  line-height: 1.45em;
+  text-shadow: 2px 2px 4px rgb(0 0 0 / 72%);
+`;
+const Span = styled.div`
+  margin-top: 20px;
+  font-size: 20px;
+  color: #fff;
+  line-height: 1.45em;
+  text-overflow: ellipsis;
+  z-index: 3;
+`;
+const Videocontroller = styled.div`
+  font-weight: 700;
+  position: absolute;
+  left: 0;
+  top: 200px;
+  z-index: 100;
 `;
