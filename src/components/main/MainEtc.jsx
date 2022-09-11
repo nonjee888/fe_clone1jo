@@ -260,6 +260,8 @@ const ImageWrap = styled.div`
   height: 100%;
   position: relative;
   overflow: hidden;
+  background-image: url("https://img.cgv.co.kr//Front/Main/2021/1209/16390080561620.png");
+  background-size: cover;
 `;
 const SpHallImages = styled.image`
   cursor: pointer;

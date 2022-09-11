@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import MyLikeMovieCard from "../mymovielist/MyLikeMovieCard";
 
 const MyLikeMovies = () => {
   return (
@@ -52,6 +53,12 @@ const MyLikeMovies = () => {
               {/*영화 년도별 or 등록일순 내림차순 오름차순*/}
             </LikedTitle>
           </LikedMovies>
+          <MovieDetail>
+            <MovieList>
+              {/*기대되는 영화 목록 렌더링 될 곳*/}
+              <MyLikeMovieCard />
+            </MovieList>
+          </MovieDetail>
         </Contents>
       </Container>
     </div>
@@ -198,4 +205,17 @@ const GoBtn = styled.button`
   width: 37px;
   height: 26px;
   border: 2px solid gray;
+`;
+const MovieDetail = styled.div`
+  margin-top: 25px;
+  position: relative;
+  height: 400px;
+  width: 800px;
+  float: right;
+  border: 1px green solid;
+`;
+const MovieList = styled.ul`
+  list-style: none;
+  width: 783px;
+  height: 100%;
 `;

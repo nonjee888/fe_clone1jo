@@ -1,14 +1,14 @@
 import React from "react";
 // import Swiper core and required modules
-import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from "swiper";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import styled from "styled-components";
-
+import MovieChartCard from "./MovieChartCard";
 function MovieChart() {
   return (
     <div>
@@ -25,11 +25,10 @@ function MovieChart() {
             <MovieWrapper>
               <Swiper
                 // install Swiper modules
-                modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
+                modules={[Navigation, Pagination, Scrollbar, A11y]}
                 spaceBetween={30}
                 slidesPerView={5}
                 navigation
-                autoplay={true}
                 // pagination={{ clickable: true }}
                 // scrollbar={{ draggable: true }}
                 onSwiper={(swiper) => console.log(swiper)}
@@ -37,7 +36,10 @@ function MovieChart() {
               >
                 <StyleSwiper>
                   <SwiperSlide>
-                    <StyleSlide>Slide 1</StyleSlide>
+                    {/*카드*/}
+                    <StyleSlide>
+                      <MovieChartCard />
+                    </StyleSlide>
                     <MovieInfo>
                       <SlideTitle></SlideTitle>
                       <SlideRate></SlideRate>
@@ -45,7 +47,10 @@ function MovieChart() {
                     </MovieInfo>
                   </SwiperSlide>
                   <SwiperSlide>
-                    <StyleSlide>Slide 1</StyleSlide>
+                    {/*카드*/}
+                    <StyleSlide>
+                      <MovieChartCard />
+                    </StyleSlide>
                     <MovieInfo>
                       <SlideTitle></SlideTitle>
                       <SlideRate></SlideRate>
@@ -53,7 +58,10 @@ function MovieChart() {
                     </MovieInfo>
                   </SwiperSlide>
                   <SwiperSlide>
-                    <StyleSlide>Slide 1</StyleSlide>
+                    {/*카드*/}
+                    <StyleSlide>
+                      <MovieChartCard />
+                    </StyleSlide>
                     <MovieInfo>
                       <SlideTitle></SlideTitle>
                       <SlideRate></SlideRate>
@@ -61,7 +69,10 @@ function MovieChart() {
                     </MovieInfo>
                   </SwiperSlide>
                   <SwiperSlide>
-                    <StyleSlide>Slide 1</StyleSlide>
+                    {/*카드*/}
+                    <StyleSlide>
+                      <MovieChartCard />
+                    </StyleSlide>
                     <MovieInfo>
                       <SlideTitle></SlideTitle>
                       <SlideRate></SlideRate>
@@ -69,7 +80,10 @@ function MovieChart() {
                     </MovieInfo>
                   </SwiperSlide>
                   <SwiperSlide>
-                    <StyleSlide>Slide 1</StyleSlide>
+                    {/*카드*/}
+                    <StyleSlide>
+                      <MovieChartCard />
+                    </StyleSlide>
                     <MovieInfo>
                       <SlideTitle></SlideTitle>
                       <SlideRate></SlideRate>
@@ -77,7 +91,10 @@ function MovieChart() {
                     </MovieInfo>
                   </SwiperSlide>
                   <SwiperSlide>
-                    <StyleSlide>Slide 1</StyleSlide>
+                    {/*카드*/}
+                    <StyleSlide>
+                      <MovieChartCard />
+                    </StyleSlide>
                     <MovieInfo>
                       <SlideTitle></SlideTitle>
                       <SlideRate></SlideRate>
@@ -85,7 +102,10 @@ function MovieChart() {
                     </MovieInfo>
                   </SwiperSlide>
                   <SwiperSlide>
-                    <StyleSlide>Slide 1</StyleSlide>
+                    {/*카드*/}
+                    <StyleSlide>
+                      <MovieChartCard />
+                    </StyleSlide>
                     <MovieInfo>
                       <SlideTitle></SlideTitle>
                       <SlideRate></SlideRate>
@@ -93,7 +113,9 @@ function MovieChart() {
                     </MovieInfo>
                   </SwiperSlide>
                   <SwiperSlide>
-                    <StyleSlide>Slide 1</StyleSlide>
+                    <StyleSlide>
+                      <MovieChartCard />
+                    </StyleSlide>
                     <MovieInfo>
                       <SlideTitle></SlideTitle>
                       <SlideRate></SlideRate>
@@ -101,7 +123,10 @@ function MovieChart() {
                     </MovieInfo>
                   </SwiperSlide>
                   <SwiperSlide>
-                    <StyleSlide>Slide 1</StyleSlide>
+                    {/*카드*/}
+                    <StyleSlide>
+                      <MovieChartCard />
+                    </StyleSlide>
                     <MovieInfo>
                       <SlideTitle></SlideTitle>
                       <SlideRate></SlideRate>
@@ -109,7 +134,10 @@ function MovieChart() {
                     </MovieInfo>
                   </SwiperSlide>
                   <SwiperSlide>
-                    <StyleSlide>Slide 1</StyleSlide>
+                    {/*카드*/}
+                    <StyleSlide>
+                      <MovieChartCard />
+                    </StyleSlide>
                     <MovieInfo>
                       <SlideTitle></SlideTitle>
                       <SlideRate></SlideRate>
@@ -117,7 +145,9 @@ function MovieChart() {
                     </MovieInfo>
                   </SwiperSlide>
                   <SwiperSlide>
-                    <StyleSlide>Slide 1</StyleSlide>
+                    <StyleSlide>
+                      <MovieChartCard />
+                    </StyleSlide>
                     <MovieInfo>
                       <SlideTitle></SlideTitle>
                       <SlideRate></SlideRate>
@@ -125,7 +155,10 @@ function MovieChart() {
                     </MovieInfo>
                   </SwiperSlide>
                   <SwiperSlide>
-                    <StyleSlide>Slide 1</StyleSlide>
+                    {/*카드*/}
+                    <StyleSlide>
+                      <MovieChartCard />
+                    </StyleSlide>
                     <MovieInfo>
                       <SlideTitle></SlideTitle>
                       <SlideRate></SlideRate>
@@ -133,7 +166,10 @@ function MovieChart() {
                     </MovieInfo>
                   </SwiperSlide>
                   <SwiperSlide>
-                    <StyleSlide>Slide 1</StyleSlide>
+                    {/*카드*/}
+                    <StyleSlide>
+                      <MovieChartCard />
+                    </StyleSlide>
                     <MovieInfo>
                       <SlideTitle></SlideTitle>
                       <SlideRate></SlideRate>
@@ -141,7 +177,10 @@ function MovieChart() {
                     </MovieInfo>
                   </SwiperSlide>
                   <SwiperSlide>
-                    <StyleSlide>Slide 1</StyleSlide>
+                    {/*카드*/}
+                    <StyleSlide>
+                      <MovieChartCard />
+                    </StyleSlide>
                     <MovieInfo>
                       <SlideTitle></SlideTitle>
                       <SlideRate></SlideRate>
@@ -149,7 +188,10 @@ function MovieChart() {
                     </MovieInfo>
                   </SwiperSlide>
                   <SwiperSlide>
-                    <StyleSlide>Slide 1</StyleSlide>
+                    {/*카드*/}
+                    <StyleSlide>
+                      <MovieChartCard />
+                    </StyleSlide>
                     <MovieInfo>
                       <SlideTitle></SlideTitle>
                       <SlideRate></SlideRate>
@@ -157,7 +199,10 @@ function MovieChart() {
                     </MovieInfo>
                   </SwiperSlide>
                   <SwiperSlide>
-                    <StyleSlide>Slide 1</StyleSlide>
+                    {/*카드*/}
+                    <StyleSlide>
+                      <MovieChartCard />
+                    </StyleSlide>
                     <MovieInfo>
                       <SlideTitle></SlideTitle>
                       <SlideRate></SlideRate>
@@ -165,7 +210,10 @@ function MovieChart() {
                     </MovieInfo>
                   </SwiperSlide>
                   <SwiperSlide>
-                    <StyleSlide>Slide 1</StyleSlide>
+                    {/*카드*/}
+                    <StyleSlide>
+                      <MovieChartCard />
+                    </StyleSlide>
                     <MovieInfo>
                       <SlideTitle></SlideTitle>
                       <SlideRate></SlideRate>
@@ -173,7 +221,10 @@ function MovieChart() {
                     </MovieInfo>
                   </SwiperSlide>
                   <SwiperSlide>
-                    <StyleSlide>Slide 1</StyleSlide>
+                    {/*카드*/}
+                    <StyleSlide>
+                      <MovieChartCard />
+                    </StyleSlide>
                     <MovieInfo>
                       <SlideTitle></SlideTitle>
                       <SlideRate></SlideRate>
@@ -181,7 +232,10 @@ function MovieChart() {
                     </MovieInfo>
                   </SwiperSlide>
                   <SwiperSlide>
-                    <StyleSlide>Slide 1</StyleSlide>
+                    {/*카드*/}
+                    <StyleSlide>
+                      <MovieChartCard />
+                    </StyleSlide>
                     <MovieInfo>
                       <SlideTitle></SlideTitle>
                       <SlideRate></SlideRate>
@@ -242,17 +296,6 @@ const Titles = styled.div`
   margin-top: 30px;
   display: flex;
 `;
-const Line = styled.div`
-  display: block;
-  position: absolute;
-  left: -16px;
-  top: 50%;
-  width: 1px;
-  height: 14px;
-  margin-top: -7px;
-  border: 1px solid;
-  background-color: #d8d8d8;
-`;
 const Button4 = styled.button`
   margin-top: 30px;
   width: 100px;
@@ -277,7 +320,6 @@ const MovieWrapper = styled.div`
   display: flex;
   transition-property: transform;
   box-sizing: content-box;
-  border: 1px solid black;
 `;
 const StyleSwiper = styled.div`
   position: relative;
