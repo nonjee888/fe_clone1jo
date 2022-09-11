@@ -1,7 +1,17 @@
-import React from "react";
+import React from 'react'
+import Headers from '../components/layout/Headers'
+import Footers from '../components/layout/Footers'
+import MovieListCard from '../components/movielist/MovieListCard'
 
-function MovieChartList() {
-  return <div>MovieChartList</div>;
+
+const MovieChartList = () => {
+  return (
+    <>
+    <Headers/>
+    <MovieListCard/>
+    <Footers/>
+    </>
+  )
 }
 
-export default MovieChartList;
+export default MovieChartList
