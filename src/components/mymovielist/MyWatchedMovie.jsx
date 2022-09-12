@@ -1,8 +1,10 @@
 import React from "react";
 import MyWatchedMovieCard from "./MyWatchedMovieCard";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 
 const MyWatchedMovie = () => {
+  const navigate = useNavigate();
   return (
     <div>
       <Container>
@@ -24,13 +26,21 @@ const MyWatchedMovie = () => {
                   </ProfileContents>
                 </ProfileInner>
               </Profile>
-              <LikeBtn>
+              <LikeBtn
+                onClick={() => {
+                  navigate("/likelist");
+                }}
+              >
                 {/*좋아요 누른 영화 숫자 들어갈 자리*/}
                 <Howmany>??</Howmany>
                 {/*좋아요 누른 영화 숫자 들어갈 자리*/}
                 <P>기대되는 영화</P>
               </LikeBtn>
-              <WatchedBtn>
+              <WatchedBtn
+                onClick={() => {
+                  navigate("/movielist");
+                }}
+              >
                 {/*내가 본 영화 숫자 들어갈 자리*/}
                 <Howmany>??</Howmany>
                 {/*내가 본 영화 숫자 들어갈 자리*/}
@@ -152,20 +162,21 @@ const LikeBtn = styled.button`
   margin-top: 10px;
   width: 158px;
   height: 80px;
-  border: none;
+  border: 1px solid #bebebe;
   border-radius: 5px;
-  color: white;
-  background-color: #f34949;
+  color: #333;
+  background: none;
+  cursor: pointer;
 `;
 const WatchedBtn = styled.button`
   margin-left: 1px;
   margin-top: 10px;
   width: 158px;
   height: 80px;
-  border: 1px solid #bebebe;
   border-radius: 5px;
-  color: #333;
-  background: none;
+  border: none;
+  color: white;
+  background-color: #f34949;
 `;
 const Howmany = styled.strong`
   font-size: 25px;

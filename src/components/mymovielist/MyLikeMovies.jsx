@@ -1,8 +1,10 @@
 import React from "react";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 import MyLikeMovieCard from "../mymovielist/MyLikeMovieCard";
 
 const MyLikeMovies = () => {
+  const navigate = useNavigate();
   return (
     <div>
       <Container>
@@ -30,7 +32,11 @@ const MyLikeMovies = () => {
                 {/*좋아요 누른 영화 숫자 들어갈 자리*/}
                 <P>기대되는 영화</P>
               </LikeBtn>
-              <WatchedBtn>
+              <WatchedBtn
+                onClick={() => {
+                  navigate("/movielist");
+                }}
+              >
                 {/*내가 본 영화 숫자 들어갈 자리*/}
                 <Howmany>??</Howmany>
                 {/*내가 본 영화 숫자 들어갈 자리*/}
@@ -164,6 +170,7 @@ const WatchedBtn = styled.button`
   border-radius: 5px;
   color: #333;
   background: none;
+  cursor: pointer;
 `;
 const Howmany = styled.strong`
   font-size: 25px;
