@@ -80,7 +80,6 @@ const Infobox = styled.div`
 `
 const Info = styled.div`   //이미지랑 info랑 가로로 나란히 두개
   margin-left: 30px;
-  margin-top:-25px;
 `
 const Title = styled.div`
   display: flex;
@@ -100,7 +99,6 @@ const Status = styled.div`
   font-weight: 670;
   font-size: 12px;
   height: 23px;
-  margin-top: 27px;
 `
 const Engtitle = styled.p`
   font-weight: 450;
@@ -132,7 +130,7 @@ const Moviedesc = styled.div`
   font-weight: 550;
   margin-bottom: 25px;
   div{
-    margin: -8px auto;
+    margin-bottom: 7px;
     p{
       font-weight: 700;
     }

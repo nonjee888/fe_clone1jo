@@ -34,7 +34,7 @@ const Cardheader = styled.div`
   background-color: #fb4357;
   text-align: center;
   line-height: 29px; 
-  font-weight: 500;
+  font-weight: 700;
 `
 const Imgbox = styled.div`
     img{
@@ -43,14 +43,14 @@ const Imgbox = styled.div`
     }
 `
 const Cardinfo = styled.div`
-    margin-top: -8px;
+  
 `
 const Title = styled.div`
   color: #333333;
   white-space: nowrap;   //
   text-overflow: ellipsis;  //제목 텍스트 길어지면 말줄임표로 줄임
   overflow: hidden;  // css 세개가 세트
-  height: 37px;
+  height: 30px;
   font-weight: 640;
 `
 const Rate = styled.div`
@@ -73,6 +73,7 @@ const Date = styled.div`
   font-weight: 600;
 `
 const But = styled.div`
+margin-top: 8px;
 button{
   width: 87px;
   height: 25px;

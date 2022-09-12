@@ -30,7 +30,7 @@ export default MovieListCard
 const Container = styled.div`
   width: 100%;
   width: 1040px;  //헤더랑 통일
-  margin: 40px auto;   //헤더랑 콘텐트 띄우기겸
+  margin: 30px auto;   //헤더랑 콘텐트 띄우기겸
 `
 const Movielist = styled.div`
     width: 980px;
@@ -50,12 +50,12 @@ const Moviecardlist = styled.div`
   width: 980px;
   display: flex;
   flex-direction: row;
-  margin: 10px auto;
+  margin: 50px auto;
   flex-wrap: wrap;
 `
 const Headercheckbox = styled.div`
     display: flex;
     font-size: 13px;
-    margin: 4px;
+    margin: 15px;
     color: #424141;
 `
