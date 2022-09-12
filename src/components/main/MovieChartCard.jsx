@@ -6,7 +6,7 @@ function MovieChartCard() {
     <div>
       <MovieCard>
         <div className="ImageWrap">
-          <ImageSrc src="">
+          <ImageSrc src="" alt="">
             <MovieAge>
               <Ageinfo></Ageinfo>
             </MovieAge>
@@ -107,7 +107,7 @@ const Eggnumber = styled.p`
   font-size: 15px;
 `;
 const Rateinfo = styled.span``;
-const Img = styled.img`
+const Img = styled.image`
   margin-top: 5px;
   width: 16px;
   height: 16px;
