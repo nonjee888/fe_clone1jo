@@ -8,7 +8,6 @@ function Event() {
         <EventContents>
           <TitleWrap>
             <H3>EVENT</H3>
-            <Button3>Play</Button3>
             <Button4>전체보기</Button4>
           </TitleWrap>
           <EventList>
@@ -61,19 +60,6 @@ const H3 = styled.h3`
   width: 100%;
   font-size: 26px;
   font-weight: 700;
-`;
-const Button3 = styled.button`
-  //play pause
-  position: absolute;
-  left: 1070px;
-  top: 990px;
-  border: #e2e2e2 solid 1px;
-  width: 28px;
-  height: 28px;
-  font-size: 0;
-  background: url("https://img.cgv.co.kr/R2014/images/common/ico/main/play.png");
-  border: 1px solid #e2e2e2;
-  border-radius: 50%;
 `;
 const Button4 = styled.button`
   width: 100px;

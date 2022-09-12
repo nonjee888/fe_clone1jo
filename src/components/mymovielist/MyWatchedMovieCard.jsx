@@ -1,7 +1,9 @@
 import React from "react";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 
 const MyWatchedMovieCard = () => {
+  const navigate = useNavigate();
   return (
     <div>
       <MovieInfoLi>
@@ -21,7 +23,14 @@ const MyWatchedMovieCard = () => {
                 title="디테일 페이지"
                 href="" //링크 주소 넣을곳
               >
-                <Strong id="movietitle">타이틀</Strong>
+                <Strong
+                  id="movietitle"
+                  onClick={() => {
+                    navigate("/moviedetail");
+                  }}
+                >
+                  타이틀
+                </Strong>
               </A>
               <P>영어이름</P>
               <Date>2015.00.00 (일) 00:00 ~ 00:00</Date>

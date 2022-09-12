@@ -1,7 +1,9 @@
 import React from "react";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 
 const MyLikeMovieCard = () => {
+  const navigate = useNavigate();
   return (
     <div>
       <MovieInfoLi>
@@ -21,7 +23,13 @@ const MyLikeMovieCard = () => {
             <Released>재개봉</Released>
           </TxtInfo>
           <Like>
-            <BookBtn class="link-reservation" href="">
+            <BookBtn
+              class="link-reservation"
+              href=""
+              onClick={() => {
+                navigate("/bookmovie");
+              }}
+            >
               예매하기
             </BookBtn>
           </Like>
