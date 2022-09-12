@@ -1,4 +1,6 @@
 import React from "react";
+import Headers from "../components/layout/Headers";
+import Footers from "../components/layout/Footers";
 import styled from "styled-components";
 import MainEtc from "../components/main/MainEtc";
 import Event from "../components/main/Event";
@@ -8,12 +10,14 @@ import MovieTrailer from "../components/main/MovieTrailer";
 function Main() {
   return (
     <>
+      <Headers />
       <StMain>
         <MovieTrailer />
         <MovieChart />
         <Event />
         <MainEtc />
       </StMain>
+      <Footers />
     </>
   );
 }
