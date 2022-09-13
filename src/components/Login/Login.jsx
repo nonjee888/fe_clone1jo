@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Login = () => {
+  
   return (
     <>
     <Logincontainer>
@@ -11,8 +12,9 @@ const Login = () => {
             <Div2>예매 확인</Div2>
         </Loginheader>
         <Loginbody>
-            <Loginnaver>
-                <img src="https://img.cgv.co.kr/image_gt/login/btn_loginNaver.jpg"></img>
+            <Loginnaver><a href="https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=pzDgsqN97tm08yH4p_sm&redirect_uri=http://localhost:3000/loading/&state=state">
+            
+                <img src="https://img.cgv.co.kr/image_gt/login/btn_loginNaver.jpg"></img></a>
             </Loginnaver>
         </Loginbody>
     </Logincontainer>
