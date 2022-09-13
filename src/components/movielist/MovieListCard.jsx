@@ -1,15 +1,13 @@
 import MovieCard from "./MovieCard";
 import styled from "styled-components";
 import { React, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { getMovies } from "../../redux/modules/movies";
 
 const MovieListCard = () => {
-  const navigate = useNavigate();
   const dispatch = useDispatch();
   const { isLoading, error, movies } = useSelector((state) => state.movies);
-  console.log(movies);
+
   useEffect(() => {
     dispatch(getMovies());
   }, [dispatch]);
@@ -33,12 +31,8 @@ const MovieListCard = () => {
           <p>현재 상영작만 보기</p>
         </Headercheckbox>
         <Moviecardlist>
-          {movies.map((movie) => (
-            <MovieCard
-              onClick={() => {
-                navigate("/moviedetail");
-              }}
-            />
+          {movies?.map((movie) => (
+            <MovieCard movie={movie} key={movie.id} id={movie.id} />
           ))}
         </Moviecardlist>
       </Movielist>

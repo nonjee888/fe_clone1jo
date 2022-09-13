@@ -3,14 +3,17 @@ import { React, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { getDetails } from "../../redux/modules/movies";
+import { useParams } from "react-router-dom";
 
 const MovieDetail = () => {
+  const { id } = useParams();
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { isLoading, error, detail } = useSelector((state) => state.movies);
-  console.log(detail);
+  console.log(detail.detail);
+  // let detail.detail = sentence
   useEffect(() => {
-    dispatch(getDetails());
+    dispatch(getDetails(id));
   }, [dispatch]);
 
   if (isLoading) {
@@ -20,12 +23,18 @@ const MovieDetail = () => {
   if (error) {
     return <div>{error.message}</div>;
   }
+
+  var newText = detail.detail.replace(/(<([^>]+)>)/gi, ""); //태그제거
+  var tmp = newText.replace(/&nbsp;/gi, " "); //공백제거
+  var tmp2 = tmp.replace(/&lt;/gi, "");
+  var tmp3 = tmp2.replace(/&gt;/gi, "");
+
   return (
     <>
       <div>
         <Container>
           <Infobox>
-            <img src={detail?.img} />
+            <img src={detail.img} />
             <Info>
               <Title>
                 <h3>{detail?.title}</h3>
@@ -63,7 +72,7 @@ const MovieDetail = () => {
           </Infobox>
           <Middle>
             <Desc>
-              <p>{detail?.detail}</p>
+              <p>{tmp3}</p>
             </Desc>
             <Ad>
               <img src="https://ifh.cc/g/bAOBgG.jpg"></img>

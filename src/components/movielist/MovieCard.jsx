@@ -1,27 +1,31 @@
 import React from "react";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 
 const MovieCard = ({ movie }) => {
-  // console.log(movie);
+  const navigate = useNavigate();
+  const x = movie.id - 19; // number 순서 정해주기
   return (
     <Moviecardcontainer>
       <Cardheader>
-        <p>no.1</p>
+        <p>No.{x}</p>
       </Cardheader>
-      <Imgbox>
-        <a href="/moviedetail">
-          <img src={movie.img}></img>
-        </a>
+      <Imgbox
+        onClick={() => {
+          navigate("/moviedetail/" + movie.id);
+        }}
+      >
+        <img src={movie.img}></img>
       </Imgbox>
       <Cardinfo>
         <Title>
           <p>{movie.title}</p>
         </Title>
         <Rate>
-          <p>예매율 : {movie.rate}%</p>
+          <p>예매율 : {movie.rate}</p>
         </Rate>
         <Date>
-          <p>개봉 : {movie.date}</p>
+          <p>{movie.date}</p>
         </Date>
         <But>
           <a href="/bookmovie">
@@ -95,5 +99,6 @@ const But = styled.div`
     border-radius: 5px;
     border-color: #fb4357;
     font-weight: 700;
+    cursor: pointer;
   }
 `;
