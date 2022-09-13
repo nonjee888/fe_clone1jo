@@ -1,16 +1,16 @@
 import React from "react";
 import Headers from "../components/layout/Headers";
 import Footers from "../components/layout/Footers";
-import MyWatchedMovie from "../components/mymovielist/MyWatchedMovie";
+import MyLikeMovies from "../components/mymovielist/MyLikeMovies";
 
-function MyMovieList() {
+const MyLikeList = () => {
   return (
     <div>
       <Headers />
-      <MyWatchedMovie />
+      <MyLikeMovies />
       <Footers />
     </div>
   );
-}
+};
 
-export default MyMovieList;
+export default MyLikeList;

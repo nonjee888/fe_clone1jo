@@ -1,0 +1,172 @@
+.SpecialHallList {
+  overflow: hidden;
+  width: 440px;
+  height: 100%;
+  float: right;
+}
+.List1 {
+  width: 395px;
+  height: 26.5px;
+  background: none;
+  border-top: 1px solid #e4e4e4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 19px 20px 19px 19px;
+}
+.List1:hover {
+  border: 1px solid black;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 900;
+}
+.List1:hover strong {
+  font-weight: 900;
+}
+.List1:hover .SuiteCinema {
+  display: block;
+}
+.SuiteCinema {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 500px;
+  height: 264px;
+  display: none;
+}
+.react-player {
+  padding-bottom: 100px;
+  transform: scale(1.4);
+}
+.react-player::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-image: linear-gradient(
+      to right,
+      #000 15%,
+      rgba(0, 0, 0, 0.25) 25%,
+      rgba(0, 0, 0, 0) 50%,
+      rgba(0, 0, 0, 0.25) 75%,
+      #000 100%
+    ),
+    linear-gradient(
+      to left,
+      #000 15%,
+      rgba(0, 0, 0, 0.25) 25%,
+      rgba(0, 0, 0, 0) 50%,
+      rgba(0, 0, 0, 0.25) 75%,
+      #000 100%
+    );
+  z-index: 1000;
+}
+.ImageWrap {
+  overflow: hidden;
+  position: relative;
+  width: 170px;
+  height: 234px;
+  border-radius: 10px;
+}
+.ImageWrap::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.09) 35%,
+    rgba(0, 0, 0, 0.85)
+  );
+  z-index: 2;
+}
+.ImageWrap::after {
+  content: counter(movie-chart-counter);
+  counter-increment: movie-chart-counter;
+  position: absolute;
+  left: 9px;
+  bottom: -4px;
+  font-weight: 400;
+  font-size: 50px;
+  font-style: italic;
+  color: #fff;
+  line-height: 1em;
+  z-index: 3;
+  text-shadow: 2px 5px 5px rgb(0 0 0 / 45%);
+}
+.ImageWrap:hover {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0.09) 35%,
+      rgba(0, 0, 0, 0.44)
+    ),
+    linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0.09) 35%,
+      rgba(0, 0, 0, 0.54)
+    );
+  z-index: 2;
+}
+.DetailBtn {
+  color: black;
+  position: absolute;
+  left: 30px;
+  bottom: 120px;
+  background: #f4f3f3;
+  width: 110px;
+  height: 35px;
+  border-radius: 5px;
+  border: none;
+  z-index: 2;
+}
+.BookBtn {
+  position: absolute;
+  left: 30px;
+  bottom: 80px;
+  width: 110px;
+  height: 35px;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  background: rgb(221, 52, 52);
+  z-index: 2;
+}
+.imagewrap:hover .DetailBtn.BookBtn {
+  display: block;
+}
+.DetailBtn:hover {
+  color: black;
+  position: absolute;
+  left: 30px;
+  bottom: 120px;
+  background: #c6c5c5da;
+  width: 110px;
+  height: 35px;
+  border-radius: 5px;
+  border: none;
+  z-index: 2;
+}
+.BookBtn:hover {
+  position: absolute;
+  left: 30px;
+  bottom: 80px;
+  width: 110px;
+  height: 35px;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  background: rgba(221, 52, 52, 0.705);
+  z-index: 2;
+}
