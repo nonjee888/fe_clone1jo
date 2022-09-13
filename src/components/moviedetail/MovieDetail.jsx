@@ -7,8 +7,8 @@ import { getDetails } from "../../redux/modules/movies";
 const MovieDetail = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { isLoading, error, movies } = useSelector((state) => state.movies);
-  console.log(movies);
+  const { isLoading, error, detail } = useSelector((state) => state.movies);
+  console.log(detail);
   useEffect(() => {
     dispatch(getDetails());
   }, [dispatch]);
@@ -25,30 +25,30 @@ const MovieDetail = () => {
       <div>
         <Container>
           <Infobox>
-            <img src={movies?.img} />
+            <img src={detail?.img} />
             <Info>
               <Title>
-                <h3>{movies?.title}</h3>
+                <h3>{detail?.title}</h3>
                 <Status>
-                  {movies?.status === 2 ? "현재 상영중" : "상영 종료"}
+                  {detail?.status === 2 ? "현재 상영중" : "상영 종료"}
                 </Status>
               </Title>
-              <Engtitle>{movies?.titleEng}</Engtitle>
+              <Engtitle>{detail?.titleEng}</Engtitle>
               <Rate>
-                <p>예매율 : {movies?.rate}%</p>
+                <p>예매율 : {detail?.rate}%</p>
               </Rate>
               <Hr />
               <Moviedesc>
                 <div>
                   <p>
-                    감독 : {movies?.director} / 배우 : {movies?.actor}
+                    감독 : {detail?.director} / 배우 : {detail?.actor}
                   </p>
                 </div>
                 <div>
-                  <p>장르 : {movies?.genre}</p>
+                  <p>장르 : {detail?.genre}</p>
                 </div>
                 <div>
-                  <p>개봉 : {movies?.date}</p>
+                  <p>개봉 : {detail?.date}</p>
                 </div>
               </Moviedesc>
               <Bookingbut
@@ -63,7 +63,7 @@ const MovieDetail = () => {
           </Infobox>
           <Middle>
             <Desc>
-              <p>{movies?.detail}</p>
+              <p>{detail?.detail}</p>
             </Desc>
             <Ad>
               <img src="https://ifh.cc/g/bAOBgG.jpg"></img>

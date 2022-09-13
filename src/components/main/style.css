@@ -47,7 +47,7 @@
   top: 0;
   background-image: linear-gradient(
       to right,
-      #000 20%,
+      #000 15%,
       rgba(0, 0, 0, 0.25) 25%,
       rgba(0, 0, 0, 0) 50%,
       rgba(0, 0, 0, 0.25) 75%,
@@ -55,7 +55,7 @@
     ),
     linear-gradient(
       to left,
-      #000 20%,
+      #000 15%,
       rgba(0, 0, 0, 0.25) 25%,
       rgba(0, 0, 0, 0) 50%,
       rgba(0, 0, 0, 0.25) 75%,
@@ -101,7 +101,6 @@
   text-shadow: 2px 5px 5px rgb(0 0 0 / 45%);
 }
 .ImageWrap:hover {
-  display: block;
   left: 0;
   bottom: 0;
   width: 100%;
@@ -121,19 +120,53 @@
   z-index: 2;
 }
 .DetailBtn {
-  color: inherit;
-  text-decoration: none;
+  color: black;
   position: absolute;
-  left: 0;
-  top: 0;
+  left: 30px;
+  bottom: 120px;
+  background: #f4f3f3;
+  width: 110px;
+  height: 35px;
+  border-radius: 5px;
+  border: none;
+  z-index: 2;
 }
 .BookBtn {
-  color: inherit;
-  text-decoration: none;
   position: absolute;
-  left: 0;
-  top: 0;
+  left: 30px;
+  bottom: 80px;
+  width: 110px;
+  height: 35px;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  background: rgb(221, 52, 52);
+  z-index: 2;
 }
 .imagewrap:hover .DetailBtn.BookBtn {
   display: block;
+}
+.DetailBtn:hover {
+  color: black;
+  position: absolute;
+  left: 30px;
+  bottom: 120px;
+  background: #c6c5c5da;
+  width: 110px;
+  height: 35px;
+  border-radius: 5px;
+  border: none;
+  z-index: 2;
+}
+.BookBtn:hover {
+  position: absolute;
+  left: 30px;
+  bottom: 80px;
+  width: 110px;
+  height: 35px;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  background: rgba(221, 52, 52, 0.705);
+  z-index: 2;
 }

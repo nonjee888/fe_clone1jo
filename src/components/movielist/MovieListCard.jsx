@@ -34,7 +34,11 @@ const MovieListCard = () => {
         </Headercheckbox>
         <Moviecardlist>
           {movies.map((movie) => (
-            <MovieCard />
+            <MovieCard
+              onClick={() => {
+                navigate("/moviedetail");
+              }}
+            />
           ))}
         </Moviecardlist>
       </Movielist>

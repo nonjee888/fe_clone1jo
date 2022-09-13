@@ -11,7 +11,7 @@ function MovieChartCard() {
               <Ageinfo></Ageinfo>
             </MovieAge>
           </ImageSrc>
-          <MovieChartBtn>
+          <MovieChartBtn className="detailButton">
             <button className="DetailBtn" src="">
               상세보기
             </button>
@@ -24,8 +24,7 @@ function MovieChartCard() {
           <StInfo>공조2 인터내셔날</StInfo>
           <Rateinfo>
             <Img
-              src="https://img.cgv.co.kr/R2014/images/common/egg/eggGoldenegggreat.png
-"
+              src="https://img.cgv.co.kr/R2014/images/common/egg/eggGoldenegggreat.png"
               alt="Golden egg great"
             />
           </Rateinfo>
@@ -42,10 +41,17 @@ export default MovieChartCard;
 const MovieCard = styled.li`
   width: 170px;
   height: 234px;
-  /* border: black solid 1px; */
   background-image: url("https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86155/86155_320.jpg");
   background-size: cover;
   border-radius: 10px;
+  .detailButton {
+    display: none;
+  }
+  &:hover {
+    .detailButton {
+      display: block;
+    }
+  }
 `;
 const ImageSrc = styled.image`
   position: absolute;
@@ -80,8 +86,8 @@ const Ageinfo = styled.i`
   border-radius: 2px;
 `;
 const MovieChartBtn = styled.div`
-  position: relative;
-  display: none;
+  /* position: relative; */
+  /* display: none; */
 `;
 const MovieInfoWrap = styled.div`
   display: flex;

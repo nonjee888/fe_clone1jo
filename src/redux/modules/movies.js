@@ -6,7 +6,7 @@ export const getMovies = createAsyncThunk(
   async (thunkAPI) => {
     try {
       const data = await instance.get("/movies");
-      console.log(data.data.data.movies);
+      console.log(data.data.data);
       return data.data.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error);
@@ -69,10 +69,10 @@ export const movies = createSlice({
       state.isLoading = true; // 네트워크 요청이 시작되면 로딩상태를 true로 변경합니다.
     },
     [getDetails.fulfilled]: (state, action) => {
-      // console.log(state);
+      console.log(state);
       state.isLoading = false; // 네트워크 요청이 끝났으니, false로 변경합니다.
-      state.movies = action.payload; // Store에 있는 todos에 서버에서 가져온 todos를 넣습니다.
-      // console.log(state.movies);
+      state.detail = action.payload; // Store에 있는 todos에 서버에서 가져온 todos를 넣습니다.
+      console.log(state.detail);
     },
     [getDetails.rejected]: (state, action) => {
       state.isLoading = false; // 에러가 발생했지만, 네트워크 요청이 끝났으니, false로 변경합니다.

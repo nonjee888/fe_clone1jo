@@ -261,9 +261,6 @@ const ImageWrap = styled.div`
   background-image: url("https://img.cgv.co.kr//Front/Main/2021/1209/16390080561620.png");
   background-size: cover;
 `;
-const SpHallImages = styled.image`
-  cursor: pointer;
-`;
 const Strong3 = styled.div`
   color: #222;
   font-size: 20px;
@@ -282,78 +279,6 @@ const Span1 = styled.span`
   color: #666;
   line-height: 1.429em;
 `;
-// const SpecialHallList = styled.ul`
-//   position: relative;
-//   overflow: hidden;
-//   width: 440px;
-//   height: 100%;
-//   float: right;
-// `;
-// const List1 = styled.li`
-//   width: 395px;
-//   height: 25px;
-//   background: none;
-//   border-top: 1px solid #e4e4e4;
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-//   padding: 19px 25px 19px 19px;
-//   &:hover {
-//     font-size: 18px;
-//     border: 1px solid black;
-//     border-radius: 10px;
-//     cursor: pointer;
-//   }
-// `;
-// const List2 = styled.li`
-//   width: 395px;
-//   height: 25px;
-//   background: none;
-//   border-top: 1px solid #e4e4e4;
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-//   padding: 19px 25px 19px 19px;
-//   &:hover {
-//     font-size: 18px;
-//     border: 1px solid black;
-//     border-radius: 10px;
-//     cursor: pointer;
-//   }
-// `;
-
-// const List3 = styled.li`
-//   width: 395px;
-//   height: 25px;
-//   background: none;
-//   border-top: 1px solid #e4e4e4;
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-//   padding: 19px 25px 19px 19px;
-//   &:hover {
-//     font-size: 18px;
-//     border: 1px solid black;
-//     border-radius: 10px;
-//     cursor: pointer;
-//   }
-// `;
-// const List4 = styled.li`
-//   width: 395px;
-//   height: 25px;
-//   background: none;
-//   border-top: 1px solid #e4e4e4;
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-//   padding: 19px 25px 19px 19px;
-//   &:hover {
-//     font-size: 18px;
-//     border: 1px solid black;
-//     border-radius: 10px;
-//     cursor: pointer;
-//   }
-// `;
 const Div = styled.div``;
 const EtcTable = styled.div`
   display: flex;
