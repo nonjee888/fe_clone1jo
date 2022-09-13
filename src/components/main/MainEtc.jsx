@@ -16,39 +16,37 @@ function MainEtc() {
             <SpecialHallcontent>
               {/*특별관 슬라이더*/}
               <SliderBox>
-                <ImageWrap>
-                  <SpHallImages />
-                </ImageWrap>
+                <ImageWrap>{/* <SpHallImages /> */}</ImageWrap>
               </SliderBox>
               {/*특별관 리스트*/}
-              <ul class="SpecialHallList">
-                <li class="List1">
+              <ul className="SpecialHallList">
+                <li className="List1">
                   <img
-                    class="SuiteCinema"
+                    className="SuiteCinema"
                     src="https://img.cgv.co.kr//Front/Main/2021/1209/16390080561620.png"
                   ></img>
                   <Strong3>SUITE CINEMA</Strong3>
                   <Span1>#호텔 컨셉의 프리미엄관</Span1>
                 </li>
-                <li class="List1">
+                <li className="List1">
                   <img
-                    class="SuiteCinema"
+                    className="SuiteCinema"
                     src="https://img.cgv.co.kr//Front/Main/2022/0616/16553622935690.png"
                   ></img>
                   <Strong3>CINE & LIVINROOM</Strong3>
                   <Span1>#신개념 소셜 상영관</Span1>
                 </li>
-                <li class="List1">
+                <li className="List1">
                   <img
-                    class="SuiteCinema"
+                    className="SuiteCinema"
                     src="https://img.cgv.co.kr//Front/Main/2021/1130/16382612660240.png"
                   ></img>
                   <Strong3>4DX</Strong3>
                   <Span1>#모션시트 #오감체험</Span1>
                 </li>
-                <li class="List1">
+                <li className="List1">
                   <img
-                    class="SuiteCinema"
+                    className="SuiteCinema"
                     src="https://img.cgv.co.kr//Front/Main/2021/1130/16382612660560.png"
                   ></img>
                   <Strong3>CINE de CHEF</Strong3>
@@ -263,9 +261,6 @@ const ImageWrap = styled.div`
   background-image: url("https://img.cgv.co.kr//Front/Main/2021/1209/16390080561620.png");
   background-size: cover;
 `;
-const SpHallImages = styled.image`
-  cursor: pointer;
-`;
 const Strong3 = styled.div`
   color: #222;
   font-size: 20px;
@@ -284,78 +279,6 @@ const Span1 = styled.span`
   color: #666;
   line-height: 1.429em;
 `;
-// const SpecialHallList = styled.ul`
-//   position: relative;
-//   overflow: hidden;
-//   width: 440px;
-//   height: 100%;
-//   float: right;
-// `;
-// const List1 = styled.li`
-//   width: 395px;
-//   height: 25px;
-//   background: none;
-//   border-top: 1px solid #e4e4e4;
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-//   padding: 19px 25px 19px 19px;
-//   &:hover {
-//     font-size: 18px;
-//     border: 1px solid black;
-//     border-radius: 10px;
-//     cursor: pointer;
-//   }
-// `;
-// const List2 = styled.li`
-//   width: 395px;
-//   height: 25px;
-//   background: none;
-//   border-top: 1px solid #e4e4e4;
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-//   padding: 19px 25px 19px 19px;
-//   &:hover {
-//     font-size: 18px;
-//     border: 1px solid black;
-//     border-radius: 10px;
-//     cursor: pointer;
-//   }
-// `;
-
-// const List3 = styled.li`
-//   width: 395px;
-//   height: 25px;
-//   background: none;
-//   border-top: 1px solid #e4e4e4;
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-//   padding: 19px 25px 19px 19px;
-//   &:hover {
-//     font-size: 18px;
-//     border: 1px solid black;
-//     border-radius: 10px;
-//     cursor: pointer;
-//   }
-// `;
-// const List4 = styled.li`
-//   width: 395px;
-//   height: 25px;
-//   background: none;
-//   border-top: 1px solid #e4e4e4;
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-//   padding: 19px 25px 19px 19px;
-//   &:hover {
-//     font-size: 18px;
-//     border: 1px solid black;
-//     border-radius: 10px;
-//     cursor: pointer;
-//   }
-// `;
 const Div = styled.div``;
 const EtcTable = styled.div`
   display: flex;

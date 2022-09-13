@@ -101,6 +101,7 @@ const DeleteBtn = styled.button`
   height: 25px;
   border-radius: 50%;
   border: none;
+  cursor: pointer;
   background: url("https://img.cgv.co.kr/R2014/images/common/btn/btn_del.gif");
 `;
 const Date = styled.p`
