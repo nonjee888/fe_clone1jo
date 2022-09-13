@@ -1,5 +1,8 @@
 import React from "react";
 // import Swiper core and required modules
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { getMovies } from "../../redux/modules/movies";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from "swiper";
 // Import Swiper styles
@@ -10,6 +13,20 @@ import "swiper/css/scrollbar";
 import styled from "styled-components";
 import MovieChartCard from "./MovieChartCard";
 function MovieChart() {
+  const dispatch = useDispatch();
+  const { isLoading, error, movies } = useSelector((state) => state.movies);
+  useEffect(() => {
+    dispatch(getMovies());
+  }, [dispatch]);
+
+  if (isLoading) {
+    return <div>로딩 중....</div>;
+  }
+
+  if (error) {
+    return <div>{error.message}</div>;
+  }
+
   return (
     <div>
       <MvChrtWrap>
@@ -38,7 +55,10 @@ function MovieChart() {
                   <SwiperSlide>
                     {/*카드*/}
                     <StyleSlide>
-                      <MovieChartCard />
+                      {/* {movies?.map((movie) => { */}
+                      <MovieChartCard
+                      // movie={movie} key={movie.id}})}
+                      />
                     </StyleSlide>
                     <MovieInfo>
                       <SlideTitle></SlideTitle>

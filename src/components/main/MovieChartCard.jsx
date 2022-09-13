@@ -1,12 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 
-function MovieChartCard() {
+function MovieChartCard(movie) {
+  console.log(movie);
   return (
     <div>
       <MovieCard>
         <div className="ImageWrap">
-          <ImageSrc src="" alt="">
+          <ImageSrc src="{}" alt="">
             <MovieAge>
               <Ageinfo></Ageinfo>
             </MovieAge>
