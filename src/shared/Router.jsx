@@ -8,6 +8,7 @@ import MyLikeList from "../pages/MyLikeList";
 import MyMovieList from "../pages/MyMovieList";
 import MovieChartList from "../pages/MovieChartList";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Loading from "../pages/Loading";
 
 function Router() {
   return (
@@ -23,6 +24,7 @@ function Router() {
           <Route path="/likelist" element={<MyLikeList />} exact />
           <Route path="/admin" element={<Admin />} exact />
           <Route path="*" element={<div>없는 페이지입니다.</div>} />
+          <Route path="/loading" element={<Loading />} exact />
         </Routes>
       </BrowserRouter>
     </div>
