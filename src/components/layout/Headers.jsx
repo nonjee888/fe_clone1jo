@@ -5,7 +5,6 @@ import { useSelector } from "react-redux";
 
 const Headers = () => {
   const userlogin = useSelector((state) => state.user);
-  console.log(userlogin.is_Login);
   return (
     <>
       <Adbox>
@@ -24,9 +23,7 @@ const Headers = () => {
             </Li>
             <li>
               <a href="/login">
-                {userlogin.is_login && <Img2 />}
-                <Img2 src="https://ifh.cc/g/RMVRhn.png" />
-                {/* <Img2 src="https://img.cgv.co.kr/R2014/images/common/ico/loginPassword.png" /> */}
+                <Img2 src="https://ifh.cc/g/RMVRhn.png"></Img2>
               </a>
             </li>
             <li>
