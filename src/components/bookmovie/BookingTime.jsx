@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { useSelector } from "react-redux";
 
 function BookingTime() {
 
@@ -7,12 +8,8 @@ function BookingTime() {
     <>
     <TimeHeader>시간</TimeHeader>
     <TimeTable>
-      <Time>08:00</Time>
-      <Time>12:45</Time>
-      <Time>14:20</Time>
-      <Time>16:50</Time>
-      <Time>19:35</Time>
-      <Time>20:10</Time>
+      <Time><h1>08:00</h1> <p>남은좌석 22석</p></Time>
+      <Time><h1>12:00</h1> <p>남은좌석 122석</p></Time>
       </TimeTable>
      
     
@@ -53,17 +50,23 @@ border: solid 1px gray;
 border-radius: 20px;
 margin-bottom: 20px;
 width: 120px;
-height: 65px;
+height: 60px;
 font-weight: bold;
-align-items: center;
-justify-content: center;
-display: block;
-font-size: xx-large;
+/* align-items: center;
+justify-content: center; */
+/* display: block; */
 text-align: center;
-line-height : 60px;
+line-height : 25px;
 box-shadow: 0 2px 5px 1px rgb(64 60 67 / 30%);
 color: gray;
 &:hover {
   color: red;
+}
+p{
+  font-size: 11px;
+}
+h1{
+  font-size: 25px;
+  margin-top: 8px;
 }
 `;

@@ -34,9 +34,9 @@ const BookMovieLayout = () => {
           
         </Body>
 
-        <Bookinginfor>
+        {/* <Bookinginfor>
             <Bookinginfo/>    
-        </Bookinginfor>
+        </Bookinginfor> */}
     </>
   );
 };
