@@ -4,7 +4,6 @@ import BookMovie from "../pages/BookMovie";
 import Admin from "../pages/Admin";
 import Loginpage from "../pages/Loginpage";
 import Detail from "../pages/Detail";
-import BookMovie from "../pages/BookMovie";
 import MyLikeList from "../pages/MyLikeList";
 import MyMovieList from "../pages/MyMovieList";
 import Seat from "../pages/Seat";
