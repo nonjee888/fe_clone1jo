@@ -12,8 +12,7 @@ const MovieDetail = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { isLoading, error, detail } = useSelector((state) => state.movies);
-  console.log(detail.id);
-  // let detail.detail = sentence
+
   useEffect(() => {
     dispatch(getDetails(id));
   }, [dispatch]);

@@ -21,12 +21,6 @@ function MovieTrailer() {
                 light={false} // 플레이어 모드
                 pip={true} // pip 모드 설정 여부
               />
-              {/* <Video id="hz" autoplay muted playsInline>
-                <source
-                  src="https://adimg.cgv.co.kr/images/202209/beautiful/beautiful_1080x608.mp4"
-                  type="video/mp4"
-                />
-              </Video> */}
               <Videocontroller>
                 <Strong>인생은 아름다워</Strong>
                 <Span>
@@ -79,16 +73,6 @@ const StVideoWrap = styled.div`
   width: 100%;
   height: 100%;
 `;
-
-// const Video = styled.video`
-//   margin-top: 30px;
-//   position: relative;
-//   width: 100%;
-//   height: 100%;
-//   transform: scale(1.35);
-//   z-index: 1;
-//   background-size: cover;
-// `;
 const Strong = styled.strong`
   display: block;
   font-weight: 900;

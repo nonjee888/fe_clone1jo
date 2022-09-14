@@ -30,7 +30,7 @@ function Router() {
           <Route path="/ticket" element={<Ticketpage />} exact />
           <Route path="*" element={<div>없는 페이지입니다.</div>} />
           <Route path="/loading" element={<Loading />} exact />
-          <Route path="/kakaoloading" element={<KakaoLoading />} exact />
+          <Route path="/kakaoloading/" element={<KakaoLoading />} exact />
         </Routes>
       </BrowserRouter>
     </div>

@@ -61,7 +61,7 @@
       rgba(0, 0, 0, 0.25) 75%,
       #000 100%
     );
-  z-index: 1000;
+  z-index: 2;
 }
 .ImageWrap {
   overflow: hidden;
@@ -81,14 +81,14 @@
   background-image: linear-gradient(
     to bottom,
     rgba(0, 0, 0, 0),
-    rgba(0, 0, 0, 0.09) 35%,
-    rgba(0, 0, 0, 0.85)
+    rgba(0, 0, 0, 0.09) 50%,
+    rgba(0, 0, 0, 1.55)
   );
   z-index: 2;
 }
 .ImageWrap::after {
-  content: counter(movie-chart-counter);
   counter-increment: movie-chart-counter;
+  content: counter(movie-chart-counter);
   position: absolute;
   left: 9px;
   bottom: -4px;
@@ -100,7 +100,7 @@
   z-index: 3;
   text-shadow: 2px 5px 5px rgb(0 0 0 / 45%);
 }
-.ImageWrap:hover {
+/* .ImageWrap:hover {
   left: 0;
   bottom: 0;
   width: 100%;
@@ -108,17 +108,17 @@
   background-image: linear-gradient(
       to bottom,
       rgba(0, 0, 0, 0),
-      rgba(0, 0, 0, 0.09) 35%,
-      rgba(0, 0, 0, 0.44)
+      rgba(0, 0, 0, 0.09) 50%,
+      rgba(0, 0, 0, 0.454)
     ),
     linear-gradient(
       to top,
       rgba(0, 0, 0, 0),
-      rgba(0, 0, 0, 0.09) 35%,
+      rgba(0, 0, 0, 0.09) 50%,
       rgba(0, 0, 0, 0.54)
     );
-  z-index: 2;
-}
+  z-index: 1000;
+} */
 .DetailBtn {
   color: black;
   position: absolute;
@@ -142,9 +142,6 @@
   color: white;
   background: rgb(221, 52, 52);
   z-index: 2;
-}
-.imagewrap:hover .DetailBtn.BookBtn {
-  display: block;
 }
 .DetailBtn:hover {
   color: black;

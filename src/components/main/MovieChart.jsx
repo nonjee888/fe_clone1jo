@@ -15,6 +15,7 @@ import MovieChartCard from "./MovieChartCard";
 function MovieChart() {
   const dispatch = useDispatch();
   const { isLoading, error, movies } = useSelector((state) => state.movies);
+
   useEffect(() => {
     dispatch(getMovies());
   }, [dispatch]);
@@ -52,216 +53,20 @@ function MovieChart() {
                 // onSlideChange={() => console.log("slide change")}
               >
                 <StyleSwiper>
-                  <SwiperSlide>
-                    {/*카드*/}
-                    <StyleSlide>
-                      {/* {movies?.map((movie) => { */}
-                      <MovieChartCard
-                      // movie={movie} key={movie.id}})}
-                      />
-                    </StyleSlide>
-                    <MovieInfo>
-                      <SlideTitle></SlideTitle>
-                      <SlideRate></SlideRate>
-                      <Slideinfo></Slideinfo>
-                    </MovieInfo>
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    {/*카드*/}
-                    <StyleSlide>
-                      <MovieChartCard />
-                    </StyleSlide>
-                    <MovieInfo>
-                      <SlideTitle></SlideTitle>
-                      <SlideRate></SlideRate>
-                      <Slideinfo></Slideinfo>
-                    </MovieInfo>
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    {/*카드*/}
-                    <StyleSlide>
-                      <MovieChartCard />
-                    </StyleSlide>
-                    <MovieInfo>
-                      <SlideTitle></SlideTitle>
-                      <SlideRate></SlideRate>
-                      <Slideinfo></Slideinfo>
-                    </MovieInfo>
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    {/*카드*/}
-                    <StyleSlide>
-                      <MovieChartCard />
-                    </StyleSlide>
-                    <MovieInfo>
-                      <SlideTitle></SlideTitle>
-                      <SlideRate></SlideRate>
-                      <Slideinfo></Slideinfo>
-                    </MovieInfo>
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    {/*카드*/}
-                    <StyleSlide>
-                      <MovieChartCard />
-                    </StyleSlide>
-                    <MovieInfo>
-                      <SlideTitle></SlideTitle>
-                      <SlideRate></SlideRate>
-                      <Slideinfo></Slideinfo>
-                    </MovieInfo>
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    {/*카드*/}
-                    <StyleSlide>
-                      <MovieChartCard />
-                    </StyleSlide>
-                    <MovieInfo>
-                      <SlideTitle></SlideTitle>
-                      <SlideRate></SlideRate>
-                      <Slideinfo></Slideinfo>
-                    </MovieInfo>
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    {/*카드*/}
-                    <StyleSlide>
-                      <MovieChartCard />
-                    </StyleSlide>
-                    <MovieInfo>
-                      <SlideTitle></SlideTitle>
-                      <SlideRate></SlideRate>
-                      <Slideinfo></Slideinfo>
-                    </MovieInfo>
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <StyleSlide>
-                      <MovieChartCard />
-                    </StyleSlide>
-                    <MovieInfo>
-                      <SlideTitle></SlideTitle>
-                      <SlideRate></SlideRate>
-                      <Slideinfo></Slideinfo>
-                    </MovieInfo>
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    {/*카드*/}
-                    <StyleSlide>
-                      <MovieChartCard />
-                    </StyleSlide>
-                    <MovieInfo>
-                      <SlideTitle></SlideTitle>
-                      <SlideRate></SlideRate>
-                      <Slideinfo></Slideinfo>
-                    </MovieInfo>
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    {/*카드*/}
-                    <StyleSlide>
-                      <MovieChartCard />
-                    </StyleSlide>
-                    <MovieInfo>
-                      <SlideTitle></SlideTitle>
-                      <SlideRate></SlideRate>
-                      <Slideinfo></Slideinfo>
-                    </MovieInfo>
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <StyleSlide>
-                      <MovieChartCard />
-                    </StyleSlide>
-                    <MovieInfo>
-                      <SlideTitle></SlideTitle>
-                      <SlideRate></SlideRate>
-                      <Slideinfo></Slideinfo>
-                    </MovieInfo>
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    {/*카드*/}
-                    <StyleSlide>
-                      <MovieChartCard />
-                    </StyleSlide>
-                    <MovieInfo>
-                      <SlideTitle></SlideTitle>
-                      <SlideRate></SlideRate>
-                      <Slideinfo></Slideinfo>
-                    </MovieInfo>
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    {/*카드*/}
-                    <StyleSlide>
-                      <MovieChartCard />
-                    </StyleSlide>
-                    <MovieInfo>
-                      <SlideTitle></SlideTitle>
-                      <SlideRate></SlideRate>
-                      <Slideinfo></Slideinfo>
-                    </MovieInfo>
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    {/*카드*/}
-                    <StyleSlide>
-                      <MovieChartCard />
-                    </StyleSlide>
-                    <MovieInfo>
-                      <SlideTitle></SlideTitle>
-                      <SlideRate></SlideRate>
-                      <Slideinfo></Slideinfo>
-                    </MovieInfo>
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    {/*카드*/}
-                    <StyleSlide>
-                      <MovieChartCard />
-                    </StyleSlide>
-                    <MovieInfo>
-                      <SlideTitle></SlideTitle>
-                      <SlideRate></SlideRate>
-                      <Slideinfo></Slideinfo>
-                    </MovieInfo>
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    {/*카드*/}
-                    <StyleSlide>
-                      <MovieChartCard />
-                    </StyleSlide>
-                    <MovieInfo>
-                      <SlideTitle></SlideTitle>
-                      <SlideRate></SlideRate>
-                      <Slideinfo></Slideinfo>
-                    </MovieInfo>
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    {/*카드*/}
-                    <StyleSlide>
-                      <MovieChartCard />
-                    </StyleSlide>
-                    <MovieInfo>
-                      <SlideTitle></SlideTitle>
-                      <SlideRate></SlideRate>
-                      <Slideinfo></Slideinfo>
-                    </MovieInfo>
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    {/*카드*/}
-                    <StyleSlide>
-                      <MovieChartCard />
-                    </StyleSlide>
-                    <MovieInfo>
-                      <SlideTitle></SlideTitle>
-                      <SlideRate></SlideRate>
-                      <Slideinfo></Slideinfo>
-                    </MovieInfo>
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    {/*카드*/}
-                    <StyleSlide>
-                      <MovieChartCard />
-                    </StyleSlide>
-                    <MovieInfo>
-                      <SlideTitle></SlideTitle>
-                      <SlideRate></SlideRate>
-                      <Slideinfo></Slideinfo>
-                    </MovieInfo>
-                  </SwiperSlide>
+                  {movies?.map((movie) => (
+                    <SwiperSlide key={movie.id}>
+                      {/*카드*/}
+
+                      <StyleSlide>
+                        <MovieChartCard movie={movie} />
+                        <MovieInfo>
+                          <SlideTitle></SlideTitle>
+                          <SlideRate></SlideRate>
+                          <Slideinfo></Slideinfo>
+                        </MovieInfo>
+                      </StyleSlide>
+                    </SwiperSlide>
+                  ))}
                 </StyleSwiper>
               </Swiper>
             </MovieWrapper>
