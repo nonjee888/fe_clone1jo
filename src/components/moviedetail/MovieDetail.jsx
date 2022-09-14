@@ -1,16 +1,18 @@
 import styled from "styled-components";
-import { React, useEffect } from "react";
+import { React, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { getDetails } from "../../redux/modules/movies";
 import { useParams } from "react-router-dom";
+import { onLikePost } from "../../redux/modules/movies";
 
 const MovieDetail = () => {
   const { id } = useParams();
+  console.log(id);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { isLoading, error, detail } = useSelector((state) => state.movies);
-  console.log(detail.detail);
+  console.log(detail.id);
   // let detail.detail = sentence
   useEffect(() => {
     dispatch(getDetails(id));
@@ -28,6 +30,16 @@ const MovieDetail = () => {
   var tmp = newText.replace(/&nbsp;/gi, " "); //공백제거
   var tmp2 = tmp.replace(/&lt;/gi, "");
   var tmp3 = tmp2.replace(/&gt;/gi, "");
+
+const moviename={
+  titleEng:detail.titleEng
+}
+
+
+  const onLike = async (event) => {
+    event.preventDefault();
+    dispatch(onLikePost(id));
+  };
 
   return (
     <>
@@ -67,7 +79,9 @@ const MovieDetail = () => {
               >
                 예매하기
               </Bookingbut>
-              <Likebut>찜하기</Likebut>
+       
+            <Likebut onClick={onLike}>찜하기</Likebut>
+
             </Info>
           </Infobox>
           <Middle>
