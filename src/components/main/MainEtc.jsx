@@ -167,10 +167,8 @@ function MainEtc() {
               <Strong>고객센터</Strong>
               <Customer>
                 <Strong>1544-1122</Strong>
-                <P>
-                  고객센터 운영시간 (평일 09:00~18:00)
-                  <P>업무시간 외 자동응답 안내 가능합니다.</P>
-                </P>
+                <P>고객센터 운영시간 (평일 09:00~18:00)</P>
+                <P>업무시간 외 자동응답 안내 가능합니다.</P>
               </Customer>
               <ButtonMore>더보기</ButtonMore>
             </NoticeContents2>
@@ -475,7 +473,6 @@ const NoticeWrap = styled.div`
   ////////// 별표
   height: 238px;
   display: flex;
-  /* width: 980px; */
   margin: 0 auto;
   justify-content: center;
 `;
@@ -538,6 +535,7 @@ const NoticeContents2 = styled.div`
   line-height: 1.2;
 `;
 const P = styled.p`
+  padding-top: 5px;
   display: block; ;
 `;
 const Customer = styled.div`
