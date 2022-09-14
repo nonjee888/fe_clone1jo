@@ -9,9 +9,7 @@ function MovieChartCard(movie) {
         <div className="ImageWrap">
           <ImageSrc src={movie.movie.img}></ImageSrc>
           <MovieChartBtn className="detailButton">
-            <button className="DetailBtn" onClick={() => {}}>
-              상세보기
-            </button>
+            <button className="DetailBtn">상세보기</button>
             <button
               className="BookBtn"
               onClick={() => {
@@ -41,6 +39,7 @@ function MovieChartCard(movie) {
 export default MovieChartCard;
 
 const MovieCard = styled.li`
+  counter-reset: movie-chart-counter;
   width: 170px;
   height: 234px;
   background-size: cover;
@@ -49,9 +48,6 @@ const MovieCard = styled.li`
     display: none;
   }
   &:hover {
-    .detailButton {
-      display: block;
-    }
     background-image: linear-gradient(
         to bottom,
         rgba(0, 0, 0, 0),
@@ -64,6 +60,9 @@ const MovieCard = styled.li`
         rgba(0, 0, 0, 0.09) 35%,
         rgba(0, 0, 0, 0.54)
       );
+    .detailButton {
+      display: block;
+    }
   }
 `;
 const ImageSrc = styled.img`
@@ -96,7 +95,6 @@ const StInfo = styled.strong`
   width: 170.4px;
   height: 21px;
 `;
-
 const Rateinfo = styled.span``;
 const Img = styled.img`
   margin-left: 45px;

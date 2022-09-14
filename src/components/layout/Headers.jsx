@@ -1,10 +1,20 @@
 import React from "react";
 import Headerbar from "./Headerbar";
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { _logout } from "../../redux/modules/user";
 
 const Headers = () => {
+  let navigate = useNavigate();
+  let dispatch = useDispatch();
   const userlogin = useSelector((state) => state.user);
+  const logoutHandler = () => {
+    localStorage.removeItem("token");
+    console.log("작동");
+    window.location.reload();
+  };
   return (
     <>
       <Adbox>
@@ -22,9 +32,19 @@ const Headers = () => {
               <Img src="https://img.cgv.co.kr/WingBanner/2022/0303/16462658373950.png"></Img>
             </Li>
             <li>
-              <a href="/login">
-                <Img2 src="https://ifh.cc/g/RMVRhn.png"></Img2>
-              </a>
+              {userlogin.is_Login !== true ? (
+                <div>
+                  <a href="/login">
+                    <Img2 src="https://ifh.cc/g/RMVRhn.png"></Img2>
+                  </a>
+                </div>
+              ) : (
+                <div onClick={logoutHandler}>
+                  {/* <a href="/"> */}
+                  <ImgLogout src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FUrbGJ%2FbtrL80fjIkg%2FWWyuHWPlUKH4kFFUD1srQk%2Fimg.png"></ImgLogout>
+                  {/* </a> */}
+                </div>
+              )}
             </li>
             <li>
               <Img2 src="https://ifh.cc/g/jrsKHZ.png"></Img2>
@@ -90,4 +110,9 @@ const Img2 = styled.img`
 `;
 const Li = styled.li`
   margin-right: 80px;
+`;
+
+const ImgLogout = styled.img`
+  margin-top: 11px;
+  margin-left: 10px;
 `;
