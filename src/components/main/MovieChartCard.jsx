@@ -1,19 +1,27 @@
 import React from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
-function MovieChartCard(movie) {
+function MovieChartCard({ movie }) {
   const navigate = useNavigate();
+  let id = movie.id; // id는 movie.movie라는 데이터의 id와 같다고 선언
   return (
     <div>
       <MovieCard>
         <div className="ImageWrap">
-          <ImageSrc src={movie.movie.img}></ImageSrc>
+          <ImageSrc src={movie?.img}></ImageSrc>
           <MovieChartBtn className="detailButton">
-            <button className="DetailBtn">상세보기</button>
+            <button
+              className="DetailBtn"
+              onClick={() => {
+                navigate("/moviedetail/" + id); // 상세보기 누르면 해당 영화의 상세 페이지로 이동
+              }}
+            >
+              상세보기
+            </button>
             <button
               className="BookBtn"
               onClick={() => {
-                navigate("/bookmovie");
+                navigate("/bookmovie"); // 예매하기 누르면 예약 페이지로 이동
               }}
             >
               예매하기
@@ -21,7 +29,7 @@ function MovieChartCard(movie) {
           </MovieChartBtn>
         </div>
         <MovieInfoWrap>
-          <StInfo>{movie.movie.title}</StInfo>
+          <StInfo>{movie?.title}</StInfo>
           <Rateinfo>
             <Img
               src="https://img.cgv.co.kr/R2014/images/common/egg/eggGoldenegggreat.png"
@@ -29,7 +37,7 @@ function MovieChartCard(movie) {
             />
           </Rateinfo>
 
-          <BookingRate>{movie.movie.rate}</BookingRate>
+          <BookingRate>{movie?.rate}</BookingRate>
         </MovieInfoWrap>
       </MovieCard>
     </div>
@@ -39,7 +47,7 @@ function MovieChartCard(movie) {
 export default MovieChartCard;
 
 const MovieCard = styled.li`
-  counter-reset: movie-chart-counter;
+  /* counter-reset: number 1; */ //연구대상 counter 기능!
   width: 170px;
   height: 234px;
   background-size: cover;

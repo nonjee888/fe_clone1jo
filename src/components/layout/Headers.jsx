@@ -11,9 +11,10 @@ const Headers = () => {
   let dispatch = useDispatch();
   const userlogin = useSelector((state) => state.user);
   const logoutHandler = () => {
-    localStorage.removeItem("token");
-    console.log("작동");
-    window.location.reload();
+    window.alert("로그아웃 하시겠습니까?");
+    localStorage.removeItem("token"); //로그아웃 버튼 누르면 로컬스토리지의 토큰을 지운다.
+    navigate("/");
+    window.location.reload(); //자동 새로고침을 위해 버튼을 누를때마다 리로드 해주도록 한다.
   };
   return (
     <>
@@ -32,7 +33,7 @@ const Headers = () => {
               <Img src="https://img.cgv.co.kr/WingBanner/2022/0303/16462658373950.png"></Img>
             </Li>
             <li>
-              {userlogin.is_Login !== true ? (
+              {userlogin.is_Login !== true ? ( //uselogin.is_Login 이 true가 아니면 로그인 페이지로 이동 + 로그인 버튼이 보이게 하고 true면 로그아웃 버튼이 보인다.
                 <div>
                   <a href="/login">
                     <Img2 src="https://ifh.cc/g/RMVRhn.png"></Img2>
@@ -46,9 +47,25 @@ const Headers = () => {
                 </div>
               )}
             </li>
-            <li>
-              <Img2 src="https://ifh.cc/g/jrsKHZ.png"></Img2>
-            </li>
+            {userlogin.is_Login ? (
+              <div>
+                <li>
+                  <Img2 src="https://ifh.cc/g/jrsKHZ.png"></Img2>
+                </li>
+              </div>
+            ) : (
+              <div
+                onClick={() => {
+                  alert("로그인이 필요한 서비스입니다."); //웨 않돼?
+                  navigate("/login");
+                }}
+              >
+                <li>
+                  <Img2 src="https://ifh.cc/g/jrsKHZ.png"></Img2>
+                </li>
+              </div>
+            )}
+
             <li>
               <a href="/movielist">
                 <Img2 src="https://ifh.cc/g/SaLz0J.png"></Img2>
@@ -115,4 +132,5 @@ const Li = styled.li`
 const ImgLogout = styled.img`
   margin-top: 11px;
   margin-left: 10px;
+  cursor: pointer;
 `;

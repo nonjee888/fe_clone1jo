@@ -3,16 +3,18 @@ import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 
 const MovieCard = ({ movie }) => {
+  console.log(movie);
   const navigate = useNavigate();
-  const x = movie.id - 19; // number 순서 정해주기
+  const id = movie.id; // 무비차트 no.1~19 순서 정해주기
+
   return (
     <Moviecardcontainer>
       <Cardheader>
-        <p>No.{x}</p>
+        <p>No.{id}</p>
       </Cardheader>
       <Imgbox
         onClick={() => {
-          navigate("/moviedetail/" + movie.id);
+          navigate("/moviedetail/" + id); //상세페이지로 이동
         }}
       >
         <img src={movie.img}></img>

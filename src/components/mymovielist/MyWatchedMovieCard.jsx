@@ -2,8 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 
-const MyWatchedMovieCard = () => {
+const MyWatchedMovieCard = ({ movie }) => {
   const navigate = useNavigate();
+  const id = movie.movieId;
   return (
     <div>
       <MovieInfoLi>
@@ -11,30 +12,30 @@ const MyWatchedMovieCard = () => {
           <BoxImage>
             <A
               title="포스터 크게보기"
-              href="" //링크 주소 넣을곳
+              href={movie.movieImg} //링크 주소 넣을곳
             >
-              <Span>포스터 나오는곳</Span>
+              <Span>
+                <Img src={movie.movieImg} />
+              </Span>
             </A>
           </BoxImage>
           <BoxContent>
             <DeleteBtn></DeleteBtn>
             <BoxTitle>
-              <A
-                title="디테일 페이지"
-                href="" //링크 주소 넣을곳
+              <Strong
+                id="movietitle"
+                onClick={() => {
+                  navigate("/moviedetail/" + id);
+                }}
               >
-                <Strong
-                  id="movietitle"
-                  onClick={() => {
-                    navigate("/moviedetail");
-                  }}
-                >
-                  타이틀
-                </Strong>
-              </A>
-              <P>영어이름</P>
-              <Date>2015.00.00 (일) 00:00 ~ 00:00</Date>
-              <Place>CGV 강남 3관 8층 / 2명</Place>
+                {movie.movieTitle}
+              </Strong>
+
+              <P>{movie.movieTitleEng}</P>
+              <Date>{movie.date}</Date>
+              <Place>
+                CGV {movie.town} 3관 8층 / {movie.memberCount}
+              </Place>
               <Rate href="">이 영화를 평가해주세요</Rate>
             </BoxTitle>
           </BoxContent>
@@ -54,7 +55,6 @@ const MovieInfoLi = styled.li`
   border-bottom: 1px solid #d6d4ca;
   width: 720px;
   height: 158px;
-  border: 1px solid green;
 `;
 const MovieInfo = styled.div`
   position: relative;
@@ -74,13 +74,19 @@ const Span = styled.span`
   display: block;
   position: relative;
 `;
+const Img = styled.img`
+  width: 110px;
+  height: 154.59px;
+`;
 const BoxContent = styled.div`
   position: relative;
   width: 550px;
   height: 139px;
   float: left;
 `;
-const Strong = styled.strong``;
+const Strong = styled.strong`
+  cursor: pointer;
+`;
 const BoxTitle = styled.div`
   font-size: 23px;
   width: 550px;
