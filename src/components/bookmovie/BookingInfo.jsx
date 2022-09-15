@@ -1,85 +1,60 @@
-import React from "react";
+import { React, useState } from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
+import { useSelector , useDispatch } from "react-redux";
+import { choiceSeat } from "../../redux/modules/booking";
 
 function Bookinginfo() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const choiceList = useSelector((state) => state.booking)
+
+  const seatData = {
+  "title": choiceList.Title,
+  "town": choiceList.Town,
+  "date": choiceList.Date,
+  "time": choiceList.Time,
+  }
+
+  const selectSeat = () => {
+    dispatch(choiceSeat(seatData));      //내가 고른 영화정보를 보내주면서 해당 영화 상영시간의 좌석정보를 받아옴
+    navigate("/seat") ;                   //좌석선택 버튼을 누르면 실행됨
+  };
 
   return (
     <>
     <Bookedinfo>
+        <Movieposter>
+        <img src={choiceList.Img}></img>
+        </Movieposter>
 
-    <Movieposter>
-    <img src="http://img.cgv.co.kr/Movie/Thumbnail/Poster/000081/81478/81478_185.JPG"
-     alt="영화 포스터"></img>
-    </Movieposter>
+        <Movieinfo>
+          <Movietitle><a>{choiceList.Title}</a></Movietitle>
+        </Movieinfo>
 
-    <Movieinfo>
+        <Bordergray></Bordergray>
 
-    <Movietitle>
-    <a href="http://www.cgv.co.kr/movies/detail-view/?midx=81478"
-     target="_blank" onmousedown="javascript:logClick('SUMMARY/영화상세보기');"
-      title="알라딘">알라딘</a>
-    </Movietitle>
+        <Theaterinfo>
+            <Theaterchoose>
+            <span>극장 </span>
+            <span><a>CGV {choiceList.Town} </a></span>
+            </Theaterchoose>
 
-    <Movietype>
-				<span class="data ellipsis-line1" title="4DX 2D(자막)">4DX 2D(자막)</span>
-				
-    </Movietype>
+            {/* <DateChoose>                  //캘린더 기본값때문에 일시가 선택안해도 보여서 주석처리
+            <span>일시 </span>
+            <span>{choiceList.Date}</span>
+            </DateChoose> */}         
+        </Theaterinfo>
 
-    <Movierating>
-    <span class="data" title="전체 관람가">전체 관람가</span>
-		</Movierating>
+        <Bordergray></Bordergray>
 
-    </Movieinfo>
+        <Andmore>
+        <span>▷ 좌석선택 </span>
+        <span>▷ 결제</span>
+        </Andmore>
 
-    <Bordergray></Bordergray>
-
-
-
-    <Theaterinfo>
-
-    <Theaterchoose>
-    <span class="header">극장 </span>
-    <span class="data letter-spacing-min ellipsis-line1">
-    <a href="http://www.cgv.co.kr/theaters/?theaterCode=0013"
-     target="_blank" onmousedown="javascript:logClick('SUMMARY/극장상세보기');"
-      title="CGV 용산아이파크몰">CGV 용산아이파크몰 </a></span>
-    </Theaterchoose>
-
-    <DateChoose>
-    <span class="header">일시 </span>
-    <span class="data" title="2022.9.10(토) 25:05">2022.9.10(토) 25:05</span>
-    </DateChoose>
-
-    <Screenchoose>
-    <span class="header">상영관 </span>
-    <span class="data" title="4DX관 (Laser)">4DX관 (Laser)</span>
-    </Screenchoose>
-
-    <NumberChoose>
-    <span class="header">인원 </span>
-    <span class="data"></span>
-    </NumberChoose>
-
-    </Theaterinfo>
-
-    <Bordergray></Bordergray>
-
-    <Andmore>
-    <span class="path-step2" title="좌석선택">▷ 좌석선택 </span>
-    <span class="path-step3" title="결제">▷ 결제</span>
-    </Andmore>
-
-    
-    <Button type="button" onClick={() => {navigate("/seat");}}>
-
-    </Button>
-      
-
-
-
-
+        <Button type="button" onClick={selectSeat}></Button>
+        
     </Bookedinfo>
     </>
   )

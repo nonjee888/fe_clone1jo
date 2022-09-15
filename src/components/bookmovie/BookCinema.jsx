@@ -4,20 +4,17 @@ import { useDispatch } from "react-redux";
 import { choiceCinema } from "../../redux/modules/booking";
 
 function BookCinema() {
-  const [movieCinema, setMovieCinema] = useState("");
   const dispatch = useDispatch();
-
+  const [movieCinema, setMovieCinema] = useState("");
+  
   useEffect(() => {
-    dispatch(choiceCinema(movieCinema))
+    dispatch(choiceCinema(movieCinema))     //고른 영화를 스토어에 저장하는 리듀서로 이동
   }, [movieCinema]);
 
   return  (
-    <>
+    <Div>
     <Cinema>극장</Cinema>
-
-
-    <Cinemalist>
-      
+    <Cinemalist>      
       <li>
         <a href="#" onClick={()=>setMovieCinema("강남")}>
             <span>강남</span>
@@ -26,19 +23,20 @@ function BookCinema() {
       <li>
         <a href="#" onClick={()=>setMovieCinema("춘천")}>
             <span>춘천</span>
-            </a></li>
-
- 
-
-            
-      
-                     
+            </a></li>                    
           </Cinemalist>
-    </>
+      </Div>
   )
 }
 
 export default BookCinema;
+
+const Div = styled.div`
+  a{
+  text-decoration-line : none;  
+  color:black;
+}
+`
 
 const Cinema=styled.div`
 background: #444444;

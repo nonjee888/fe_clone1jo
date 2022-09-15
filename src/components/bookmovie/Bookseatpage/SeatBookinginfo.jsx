@@ -1,37 +1,42 @@
-import React from "react";
+import { React, useState ,useEffect} from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
+import { useSelector , useDispatch } from "react-redux";
+import { finishPay } from "../../../redux/modules/booking";
 
 function SeatBookinginfo() {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
+  const bookingDate = useSelector((state) => state.booking)
+  
+  const payData = {
+  title:bookingDate.Title,
+  town: bookingDate.Town,
+  date:bookingDate.Date,
+  time: bookingDate.Time,
+  seat :bookingDate.Seat,
+  memberCount :1
+  }
+  
+  
+  const payhandler = () => {
+    dispatch(finishPay(payData));
+    navigate("/ticket");
+  }
 
   return (
     <>
     <Bookedinfo>
 
-    <ButtonBefore type="button" onClick={() => {navigate("/bookmovie");}}></ButtonBefore>
+    <ButtonBefore></ButtonBefore>
 
     <Movieposter>
-    <img src="http://img.cgv.co.kr/Movie/Thumbnail/Poster/000081/81478/81478_185.JPG"
-     alt="영화 포스터"></img>
+    <img src={bookingDate.Img}></img>
     </Movieposter>
 
     <Movieinfo>
 
-    <Movietitle>
-    <a href="http://www.cgv.co.kr/movies/detail-view/?midx=81478"
-     target="_blank" onmousedown="javascript:logClick('SUMMARY/영화상세보기');"
-      title="알라딘">알라딘</a>
-    </Movietitle>
-
-    <Movietype>
-				<span class="data ellipsis-line1" title="4DX 2D(자막)">4DX 2D(자막)</span>
-				
-    </Movietype>
-
-    <Movierating>
-    <span class="data" title="전체 관람가">전체 관람가</span>
-		</Movierating>
+    <Movietitle>{bookingDate.Title}</Movietitle>
 
     </Movieinfo>
 
@@ -42,49 +47,33 @@ function SeatBookinginfo() {
     <Theaterinfo>
 
     <Theaterchoose>
-    <span class="header">극장 </span>
-    <span class="data letter-spacing-min ellipsis-line1">
-    <a href="http://www.cgv.co.kr/theaters/?theaterCode=0013"
-     target="_blank" onmousedown="javascript:logClick('SUMMARY/극장상세보기');"
-      title="CGV 용산아이파크몰">CGV 용산아이파크몰 </a></span>
+    <span>극장 </span>
+    <span>
+    <a>CGV {bookingDate.Town}</a></span>
     </Theaterchoose>
 
     <DateChoose>
-    <span class="header">일시 </span>
-    <span class="data" title="2022.9.10(토) 25:05">2022.9.10(토) 25:05</span>
+    <span>일시</span>
+    <span>{bookingDate.Date}</span>
     </DateChoose>
 
-    <Screenchoose>
-    <span class="header">상영관 </span>
-    <span class="data" title="4DX관 (Laser)">4DX관 (Laser)</span>
-    </Screenchoose>
-
-    <NumberChoose>
-    <span class="header">인원 </span>
-    <span class="data" title="1명">1명</span>
-    </NumberChoose>
-
+  
     </Theaterinfo>
 
     <Bordergray></Bordergray>
 
     <SeatChoose>
-    <span class="header">좌석 </span>
-    <span class="data" title="A1">A1</span>
+    <span>좌석 </span>
+    <span>{bookingDate.Seat}</span>
     </SeatChoose>
 
-    <Bordergray> 
-    </Bordergray>
+    <Bordergray></Bordergray>
 
-    <Payment>
-      <span class="header">금액 </span>
-      <span class="data" title="20,000원">20,000원</span>
-    </Payment>
 
     
 
     
-    <Button type="button" onClick={() => {navigate("/ticket");}}>
+    <Button type="button" onClick={payhandler}>
 
     </Button>
       
@@ -127,7 +116,7 @@ font-weight: bold;
 `;
 
 const Movierating=styled.div`
-border: none
+border: none;
 width: 130px;
 height: 30px;
 font-size:  small;
@@ -218,9 +207,7 @@ width: 240px;
 border-radius: 20px;
 background-image: url("http://img.cgv.co.kr/CGV_RIA/Ticket/image/reservation/tnb/tnb_buttons.png");
 background-repeat: no-repeat;
-backgroundPosition: '0 0';
 overflow: hidden;
-textIndent: -1000px;
 background-position: 0 -550px;
 `;
 
@@ -232,7 +219,5 @@ border-radius: 20px;
 margin-right: 20px;
 background-image: url("http://img.cgv.co.kr/CGV_RIA/Ticket/image/reservation/tnb/tnb_buttons.png");
 background-repeat: no-repeat;
-backgroundPosition: '0 0';
 overflow: hidden;
-textIndent: -1000px;
 `;

@@ -29,14 +29,11 @@ const BookMovieLayout = () => {
             <BookingTime/>
             </AddBookTime>
 
-
-            
-          
         </Body>
 
-        {/* <Bookinginfor>
+        <Bookinginfor>
             <Bookinginfo/>    
-        </Bookinginfor> */}
+        </Bookinginfor>
     </>
   );
 };
