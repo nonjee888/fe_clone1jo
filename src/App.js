@@ -15,9 +15,6 @@ function App() {
     }
   }, []);
 
-  const userlogin = useSelector((state) => state.user);
-  console.log(userlogin);
-
   return <Router />;
 }
 

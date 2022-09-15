@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getMovies } from "../../redux/modules/movies";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from "swiper";
+import { Navigation, Pagination, Scrollbar } from "swiper";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
@@ -15,7 +15,6 @@ import MovieChartCard from "./MovieChartCard";
 function MovieChart() {
   const dispatch = useDispatch();
   const { isLoading, error, movies } = useSelector((state) => state.movies);
-
   useEffect(() => {
     dispatch(getMovies());
   }, [dispatch]);
@@ -43,19 +42,19 @@ function MovieChart() {
             <MovieWrapper>
               <Swiper
                 // install Swiper modules
-                modules={[Navigation, Pagination, Scrollbar, A11y]}
-                spaceBetween={30}
-                slidesPerView={5}
+                modules={[Navigation]} //navigation은 왼쪽 오른쪽 단추
+                spaceBetween={30} //슬라이드 간 간격 조정
+                slidesPerView={5} //슬라이드가 몇개 보여질건지 결정
                 navigation
-                // pagination={{ clickable: true }}
-                // scrollbar={{ draggable: true }}
-                // onSwiper={(swiper) => console.log(swiper)}
-                // onSlideChange={() => console.log("slide change")}
+                // pagination={{ clickable: true }}  //필요하면 modules에 추가해서 사용가능
+                // scrollbar={{ draggable: true }}  //필요하면 modules에 추가해서 사용가능
+                // onSwiper={(swiper) => console.log(swiper)}  //필요하면 modules에 추가해서 사용가능
+                // onSlideChange={() => console.log("slide change")}  //필요하면 modules에 추가해서 사용가능
               >
                 <StyleSwiper>
                   {movies?.map((movie) => (
                     <SwiperSlide key={movie.id}>
-                      {/*카드*/}
+                      {/*슬라이드에 맵 함수로 데이터 뿌리기*/}
 
                       <StyleSlide>
                         <MovieChartCard movie={movie} />

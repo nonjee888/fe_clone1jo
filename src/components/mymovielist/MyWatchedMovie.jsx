@@ -1,10 +1,26 @@
-import React from "react";
-import MyWatchedMovieCard from "./MyWatchedMovieCard";
 import styled from "styled-components";
+import React, { useEffect } from "react";
+import MyWatchedMovieCard from "./MyWatchedMovieCard";
+import { useSelector, useDispatch } from "react-redux";
+import { getMypage } from "../../redux/modules/movies";
 import { useNavigate } from "react-router-dom";
 
 const MyWatchedMovie = () => {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
+  const { isLoading, error, mylist } = useSelector((state) => state.movies);
+  const login = localStorage.getItem("token"); // token 유무로 로그인 상태 판별하기
+  useEffect(() => {
+    login ? dispatch(getMypage()) : navigate("/login");
+  }, [dispatch]);
+
+  if (isLoading) {
+    return <div>로딩 중....</div>;
+  }
+
+  if (error) {
+    return <div>{error.message}</div>;
+  }
   return (
     <div>
       <Container>
@@ -19,9 +35,9 @@ const MyWatchedMovie = () => {
                       <ThumbImage></ThumbImage>
                     </ImageBox>
                     <BoxContent>
-                      <Strong>아무개님</Strong>
+                      {/* 마이페이지 유저 이름 */}
+                      <Strong>{mylist?.name}</Strong>
                       <Div></Div>
-                      <Em>닉네임</Em>
                     </BoxContent>
                   </ProfileContents>
                 </ProfileInner>
@@ -32,7 +48,7 @@ const MyWatchedMovie = () => {
                 }}
               >
                 {/*좋아요 누른 영화 숫자 들어갈 자리*/}
-                <Howmany>??</Howmany>
+                <Howmany>{mylist?.countLike}</Howmany>
                 {/*좋아요 누른 영화 숫자 들어갈 자리*/}
                 <P>기대되는 영화</P>
               </LikeBtn>
@@ -42,7 +58,7 @@ const MyWatchedMovie = () => {
                 }}
               >
                 {/*내가 본 영화 숫자 들어갈 자리*/}
-                <Howmany>??</Howmany>
+                <Howmany>{mylist?.countMovie}</Howmany>
                 {/*내가 본 영화 숫자 들어갈 자리*/}
                 <P>내가 본 영화</P>
               </WatchedBtn>
@@ -51,7 +67,7 @@ const MyWatchedMovie = () => {
           {/*사이드바 finish*/}
           <LikedMovies>
             <LikedTitle>
-              내가 본 영화<Howmany2>??건</Howmany2>
+              내가 본 영화<Howmany2>{mylist?.countMovie}건</Howmany2>
               <Select name="WatchedMovies" id="WatchedMovies">
                 {/*내가 본 영화들 년도 들어갈 자리*/}
                 <option value="등록일 순">전체</option>
@@ -65,9 +81,9 @@ const MyWatchedMovie = () => {
             </LikedTitle>
             <WatchedListDiv>
               <WatchedListContainer>
-                {/*내가 본 영화 카드 렌더링 될 자리*/}
-                <MyWatchedMovieCard />
-                {/*내가 본 영화 카드 렌더링 될 자리*/}
+                {mylist?.movies?.map((movie) => (
+                  <MyWatchedMovieCard movie={movie} key={movie.movieId} /> //map돌린 결과물 movie를 자식컴포넌트로 전달
+                ))}
               </WatchedListContainer>
             </WatchedListDiv>
           </LikedMovies>
@@ -177,6 +193,7 @@ const WatchedBtn = styled.button`
   border: none;
   color: white;
   background-color: #f34949;
+  cursor: pointer;
 `;
 const Howmany = styled.strong`
   font-size: 25px;
@@ -236,7 +253,6 @@ const WatchedListDiv = styled.div`
   zoom: 1;
   width: 720px;
   height: 300px;
-  border: solid 1px green;
 `;
 const WatchedListContainer = styled.ul`
   list-style: none;

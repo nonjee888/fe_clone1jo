@@ -9,10 +9,11 @@ export const getToken = createAsyncThunk(
   async (code, thunkAPI) => {
     //주소창의 code 뽑아낸걸 payload로 받음
     try {
-      const data = await instance.get(`?code=${code}&state=state`); //서버주소+코드정보 로 get요청을 보내면 response에 토큰을 받을수있다.
-      const ACCESS_TOKEN = data.data.data;
+      const data = await instance.get(`auth/naver?code=${code}&state=state`); //서버주소+코드정보 로 get요청을 보내면 response에 토큰을 받을수있다.
+      const ACCESS_TOKEN = data.headers.authorization;
       localStorage.setItem("token", ACCESS_TOKEN); //로컬스토리지에 토큰저장
       window.location.assign("/"); //토큰 저장하면 자동으로 메인화면으로 이동
+      window.alert("환영합니다!");
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error);
@@ -27,9 +28,11 @@ export const getKakao = createAsyncThunk(
     //주소창의 code 뽑아낸걸 payload로 받음
     try {
       const data = await instance.get(`/auth/kakao?code=${code}`); //서버주소+코드정보 로 get요청을 보내면 response에 토큰을 받을수있다.
+      console.log(data);
       const ACCESS_TOKEN = data.headers.authorization;
       localStorage.setItem("token", ACCESS_TOKEN); //로컬스토리지에 토큰저장
       window.location.assign("/"); //토큰 저장하면 자동으로 메인화면으로 이동
+      window.alert("환영합니다!");
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error);
@@ -45,6 +48,7 @@ export const getKakao = createAsyncThunk(
 //       const data = await instance.get("/auth/logout");
 //       console.log(data);
 //       localStorage.removeItem("token");
+//       window.alert("로그아웃 되었습니다.")
 //       return thunkAPI.fulfillWithValue(data.data);
 //     } catch (error) {
 //       return thunkAPI.rejectWithValue(error);
@@ -56,7 +60,7 @@ export const getKakao = createAsyncThunk(
 export const user = createSlice({
   name: "user",
   initialState: {
-    is_Login: "false",
+    is_Login: false,
     error: null,
   },
   reducers: {

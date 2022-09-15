@@ -8,13 +8,14 @@ import { onLikePost } from "../../redux/modules/movies";
 
 const MovieDetail = () => {
   const { id } = useParams();
-  console.log(id);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { isLoading, error, detail } = useSelector((state) => state.movies);
+  const { isLoading, error, detail, like } = useSelector(
+    (state) => state.movies
+  );
 
   useEffect(() => {
-    dispatch(getDetails(id));
+    dispatch(getDetails(id)); //useParams로 가져온 파라미터를 payload로 보내주어 디테일 페이지 get 요청
   }, [dispatch]);
 
   if (isLoading) {
@@ -25,20 +26,18 @@ const MovieDetail = () => {
     return <div>{error.message}</div>;
   }
 
-  var newText = detail.detail.replace(/(<([^>]+)>)/gi, ""); //태그제거
-  var tmp = newText.replace(/&nbsp;/gi, " "); //공백제거
-  var tmp2 = tmp.replace(/&lt;/gi, "");
-  var tmp3 = tmp2.replace(/&gt;/gi, "");
-
-const moviename={
-  titleEng:detail.titleEng
-}
-
-
   const onLike = async (event) => {
     event.preventDefault();
+    // window.alert("내가 찜한 영화 목록에 저장되었습니다."); 작동안됨. 함께 연구해보아요.
     dispatch(onLikePost(id));
   };
+
+  var newText = detail.detail.replace(/(<([^>]+)>)/gi, ""); //태그 제거
+  var tmp = newText.replace(/&nbsp;/gi, " "); //공백 제거
+  var tmp2 = tmp.replace(/&lt;/gi, ""); //부등호(<) 제거
+  var tmp3 = tmp2.replace(/&gt;/gi, ""); //부등호(>) 제거
+
+  const likebtn = like == "true"; // likebtn = 스토어에서 오는 like와 "true"를 비교해서 true, false를 반환
 
   return (
     <>
@@ -55,7 +54,7 @@ const moviename={
               </Title>
               <Engtitle>{detail?.titleEng}</Engtitle>
               <Rate>
-                <p>예매율 : {detail?.rate}%</p>
+                <p>예매율 : {detail?.rate}</p>
               </Rate>
               <Hr />
               <Moviedesc>
@@ -78,9 +77,10 @@ const moviename={
               >
                 예매하기
               </Bookingbut>
-       
-            <Likebut onClick={onLike}>찜하기</Likebut>
 
+              <Likebut onClick={onLike}>
+                {likebtn ? "찜삭제" : "찜하기"}
+              </Likebut>
             </Info>
           </Infobox>
           <Middle>

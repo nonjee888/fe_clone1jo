@@ -1,10 +1,27 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import MyLikeMovieCard from "../mymovielist/MyLikeMovieCard";
+import { useSelector, useDispatch } from "react-redux";
+import { getMypage } from "../../redux/modules/movies";
 
 const MyLikeMovies = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const { isLoading, error, mylist } = useSelector((state) => state.movies);
+
+  useEffect(() => {
+    dispatch(getMypage());
+  }, [dispatch]);
+
+  if (isLoading) {
+    return <div>로딩 중....</div>;
+  }
+
+  if (error) {
+    return <div>{error.message}</div>;
+  }
+
   return (
     <div>
       <Container>
@@ -19,16 +36,15 @@ const MyLikeMovies = () => {
                       <ThumbImage></ThumbImage>
                     </ImageBox>
                     <BoxContent>
-                      <Strong>아무개님</Strong>
+                      <Strong>{mylist.name}</Strong>
                       <Div></Div>
-                      <Em>닉네임</Em>
                     </BoxContent>
                   </ProfileContents>
                 </ProfileInner>
               </Profile>
               <LikeBtn>
                 {/*좋아요 누른 영화 숫자 들어갈 자리*/}
-                <Howmany>??</Howmany>
+                <Howmany>{mylist.countLike}</Howmany>
                 {/*좋아요 누른 영화 숫자 들어갈 자리*/}
                 <P>기대되는 영화</P>
               </LikeBtn>
@@ -38,7 +54,7 @@ const MyLikeMovies = () => {
                 }}
               >
                 {/*내가 본 영화 숫자 들어갈 자리*/}
-                <Howmany>??</Howmany>
+                <Howmany>{mylist.countMovie}</Howmany>
                 {/*내가 본 영화 숫자 들어갈 자리*/}
                 <P>내가 본 영화</P>
               </WatchedBtn>
@@ -48,7 +64,7 @@ const MyLikeMovies = () => {
           <LikedMovies>
             {/*기대되는 영화 숫자 들어갈 자리*/}
             <LikedTitle>
-              기대되는 영화<Howmany2>??건</Howmany2>
+              기대되는 영화<Howmany2>{mylist.countLike}건</Howmany2>
               {/*기대되는 영화 숫자 들어갈 자리*/}
               <Select name="movies" id="movies">
                 <option value="등록일 순">등록일 순</option>
@@ -61,8 +77,9 @@ const MyLikeMovies = () => {
           </LikedMovies>
           <MovieDetail>
             <MovieList>
-              {/*기대되는 영화 목록 렌더링 될 곳*/}
-              <MyLikeMovieCard />
+              {mylist?.likeMovies?.map((likeMovie) => (
+                <MyLikeMovieCard likeMovie={likeMovie} key={likeMovie.id} /> // map 돌린 결과물 likeMovie를 props로 자식컴포넌트에 보내기
+              ))}
             </MovieList>
           </MovieDetail>
         </Contents>
@@ -160,6 +177,7 @@ const LikeBtn = styled.button`
   border-radius: 5px;
   color: white;
   background-color: #f34949;
+  cursor: pointer;
 `;
 const WatchedBtn = styled.button`
   margin-left: 1px;
@@ -219,7 +237,6 @@ const MovieDetail = styled.div`
   height: 400px;
   width: 800px;
   float: right;
-  border: 1px green solid;
 `;
 const MovieList = styled.ul`
   list-style: none;
