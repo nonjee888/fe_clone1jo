@@ -13,7 +13,7 @@ const Login = () => {
         </Loginheader>
         <Loginbody>
           <Loginnaver>
-            <a href="https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=pzDgsqN97tm08yH4p_sm&redirect_uri=http://localhost:3000/loading/&state=state">
+            <a href="https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=43KVChnXUmyM5z9u7el8&redirect_uri=http://localhost:3000/loading/&state=123">
               <img src="https://img.cgv.co.kr/image_gt/login/btn_loginNaver.jpg"></img>
             </a>
           </Loginnaver>
@@ -65,10 +65,12 @@ const Loginbody = styled.div`
   border-top: 2px solid #898987;
 `;
 const Loginnaver = styled.div`
-  width: 300px;
+  width: 270px;
   margin: 10px auto;
   img {
     width: 100%;
+    border-radius: 6px;
+    border: 1px solid gray;
   }
   margin-top: 30px;
 `;
