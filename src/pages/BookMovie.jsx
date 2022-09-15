@@ -4,7 +4,8 @@ import BookMovieLayout from "../components/bookmovie/BookMovieLayout";
 import Footers from '../components/layout/Footers'
 
 function BookMovie() {
-  return (<div>
+  return (
+  <div>
     <Headers/>
     <BookMovieLayout/>
     <Footers/>

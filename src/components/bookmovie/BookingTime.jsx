@@ -1,19 +1,27 @@
-import React from "react";
+import { React, useState ,useEffect} from "react";
 import styled from "styled-components";
-import { useSelector } from "react-redux";
+import { useSelector , useDispatch } from "react-redux";
+import { choiceTime } from "../../redux/modules/booking";
 
 function BookingTime() {
+  const dispatch = useDispatch();
+  const [value, setValue] = useState(new Date());     //캘린더 라이브러리 (선택한날짜를 value로 받음)
+ 
+  useEffect(() => {
+    dispatch(choiceTime(value))         //선택한 정보들에 맞는 상영시간 서버에서 get해오는 함수로 이동
+  }, [value]);
+
+  const timeList = useSelector((state) => state.booking.Res)   //useEffect로 스토어에 넣은 영화시간 꺼내기
 
   return (
     <>
     <TimeHeader>시간</TimeHeader>
     <TimeTable>
-      <Time><h1>08:00</h1> <p>남은좌석 22석</p></Time>
-      <Time><h1>12:00</h1> <p>남은좌석 122석</p></Time>
-      </TimeTable>
-     
-    
-    </>
+      {timeList?.map((time)=> {
+        return <Time onClick={()=>setValue(time.time)} value={time.time} key={time.time}><h1>{time.time}</h1> <p>남은좌석 {time.seat}석 </p> </Time>
+        })}
+    </TimeTable>   
+</>
   )
   
 }
@@ -45,7 +53,7 @@ overflow-x: hidden;
 text-align : center;
 `;
 
-const Time=styled.div`
+const Time=styled.button`
 border: solid 1px gray;
 border-radius: 20px;
 margin-bottom: 20px;
