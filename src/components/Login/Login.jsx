@@ -13,7 +13,7 @@ const Login = () => {
         </Loginheader>
         <Loginbody>
           <Loginnaver>
-            <a href="https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=43KVChnXUmyM5z9u7el8&redirect_uri=http://localhost:3000/loading/&state=123">
+            <a href="https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=43KVChnXUmyM5z9u7el8&redirect_uri=http://eunjiroh.shop.s3-website.ap-northeast-2.amazonaws.com/loading&state=123">
               <img src="https://img.cgv.co.kr/image_gt/login/btn_loginNaver.jpg"></img>
             </a>
           </Loginnaver>
