@@ -1,70 +1,161 @@
-# Getting Started with Create React App
+# 1. 주제 소개
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+CGV 클론코딩
 
-## Available Scripts
+CGV 웹 사이트를 클론 코딩 합니다.
 
-In the project directory, you can run:
+기능 진행————————————————————————
 
-### `yarn start`
+네이버 로그인 : **⭕️**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+카카오 로그인 :   **⭕️** 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+로그아웃 버튼 만들기(로그인시만 보임)+ 로그아웃 기능 : **⭕️** 
 
-### `yarn test`
+상세페이지 정보 불러 와서 붙이기 :  **⭕️**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+상세페이지 찜 하기 버튼 :  **⭕️**
 
-### `yarn build`
+무비차트 정보 불러 와서 붙이기 :  **⭕️**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+무비차트 현재상영중 체크박스 선택시 상영중인 영화만 보이기 :  **⭕️** 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+마이페이지에 정보 불러 와서 붙이기 : **⭕️** 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+⭐️⭐️예매하기 : **⭕️** 
 
-### `yarn eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+메인페이지
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+로그인페이지
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- 로그인시 토큰받아서 저장/로그인상태 true
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+마이페이지
 
-## Learn More
+- 로그인한 회원의 찜내역/예매내역정보
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+무비차트 페이지
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- 예매 가능한 영화만 보여주기 체크박스
 
-### Code Splitting
+예매 페이지
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- 선택 가능한 영화만 출력 -> 극장 / 날짜 선택하면 = 가능한 시간 뜨도록 만들기
+- 가능한 시간 선택하면 남은좌석들 정보 나오기
 
-### Analyzing the Bundle Size
+상세 페이지
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- 영화 찜하기
 
-### Making a Progressive Web App
+# 2. 팀원 정보
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+# 3. 진행 계획
 
-### Advanced Configuration
+- 9.9.(금)
+    - Github repository 만들기, 공유
+    - 클론 코딩 기획 및 기능 분배
+    - 19:00 S.A 작성 및 제출
+- 9.10.(토)
+    - 기술 매니저님 S.A 피드백 확인
+    - 기능 구현
+- 9.11.(일)
+    - 기능 구현
+- 9.12.(월)
+    - 기능 구현
+    - 20:20~20:40 중간멘토링
+- 9.13.(화)
+    - 기능 구현
+- 9.14.(수)
+    - 기능 구현 마무리
+    - 오류 수정
+    - 21:00 다면평가, 피드백 제출
+- 9.15.(목)
+    - 오류 최종 수정
+    - 배포 , 유튜브 촬영
+    - 20:00 회고 멘토링
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
 
-### Deployment
+### 약속
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- 아침 10:00 모이기
+- 저녁 9:00 모이기
+- 필요에 따라 오후 중에 카톡으로 시간 정해서 모이기
+- 식사시간 등은 자유
+- 개인일정 때문에 참여 못할시 미리 카톡으로 공유
+- 카카오톡은 자주 확인하기
 
-### `yarn build` fails to minify
+# 4. WireFrame
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+# 5. API 설계 
+
+# 6. 해결한 문제
+
+## 프론트)1 )Cannot read properties of undefined
+
+리액트에서 가장 자주 보는 오류 메시지이다. 이 오류는 값이 정의되지 않아 읽을 수 없을 때 발생한다.
+
+includes 로 배열을 돌리기 전에 값이 불러와지지 않아 오류 발생.
+
+```
+Uncaught TypeError: Cannot read properties of undefined (reading 'classList')
+```
+
+### **해결)**
+
+### && 연산자를 사용, 앞뒤로 false 값을 찾고, false가 없다면 뒤에 있는 값을 출력한다.
+
+### 조건식에 false가 있는 경우 null이 되고 렌더링하지 않으며, 렌더링하지 않으니 오류도 출력되지 않는다.
+
+## 2) 카카오 로그인 에러코드 404 ,500
+
+첫 타에 홈런을 칠리가 없지 무한 로딩이 이어졌다. 404 에러로 서버에서 찾을수 없는 페이지에 사용자가 접근하려 했을 때 받는 에러 메시지가 떴다. payload에는 code가 잘 전송이 되었는데도.
+
+**이것 저것 시도해 보기**
+
+1. API 주소는 BE에서 작성한대로 "/auth/kakao" 로  잘 썼는지 확인해보기
+
+2. "/auth/kakao/"로 붙여보기도 함
+
+3. 서버 주소 끝에 "/" 가 붙어있어서 중복으로 "/"가 들어간건 아닌지 확인
+
+4. 카카오에서 받은 Rest API Key가 잘못된 것은 아닌지 확인
+
+5. Redirect URI 도 혹시모르니 확인
+
+6. useEffect로 미들웨어로 잘 dispatch 해주고 있는지 확인
+
+7. 마지막으로 BE분과 API가 맞는지 확인해보았고 현재 서버를 병합 중이시라서 404에러가 뜬것같다고 말씀하셨다.
+
+8. 그러고 500에러가 떴는데 정보는 잘 가졌지만 생일을 형변환하는 과정에서 알고리즘 과정에서 오류가났다.
+
+9. 이번엔 닉네임을 가져오는 과정에서 알고리즘상 오류로 500에러.
+
+10. 백엔드쪽 알고리즘을 손본 후에 정상적으로 로그인이 가능해짐!
+
+### **해결)**
+
+### **프론트와 백에서 각각다른 REST IP와 redirect_uri 사용하고 있어서 수정해줌**
+
+### **백엔드쪽 알고리즘 수정**
+
+---
+
+---
+
+## 1분 : 앞으로 시간이 더 있었다면 어떤 것을 더 할 수 있었을지
+
+### 프론트)
+
+### 1) 헤더 네비게이션바 마우스오버시 메뉴 드롭 다운되면서 펼쳐지는 기능.
+
+### 2) 무한스크롤
+
+### 백엔드)
+
+### 1) 네이버,카카오에서 성별,연령을 받아서 예매율 통계 내기
+
+### 2) 구글 로그인
