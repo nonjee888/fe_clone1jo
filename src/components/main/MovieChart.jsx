@@ -46,16 +46,11 @@ function MovieChart() {
                 spaceBetween={30} //슬라이드 간 간격 조정
                 slidesPerView={5} //슬라이드가 몇개 보여질건지 결정
                 navigation
-                // pagination={{ clickable: true }}  //필요하면 modules에 추가해서 사용가능
-                // scrollbar={{ draggable: true }}  //필요하면 modules에 추가해서 사용가능
-                // onSwiper={(swiper) => console.log(swiper)}  //필요하면 modules에 추가해서 사용가능
-                // onSlideChange={() => console.log("slide change")}  //필요하면 modules에 추가해서 사용가능
               >
                 <StyleSwiper>
                   {movies?.map((movie) => (
                     <SwiperSlide key={movie.id}>
-                      {/*슬라이드에 맵 함수로 데이터 뿌리기*/}
-
+                      {/*슬라이드에 맵 돌리기*/}
                       <StyleSlide>
                         <MovieChartCard movie={movie} />
                         <MovieInfo>

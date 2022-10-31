@@ -8,7 +8,6 @@ import { _logout } from "../../redux/modules/user";
 
 const Headers = () => {
   let navigate = useNavigate();
-  let dispatch = useDispatch();
   const userlogin = useSelector((state) => state.user);
   const logoutHandler = () => {
     window.alert("로그아웃 하시겠습니까?");
@@ -61,7 +60,6 @@ const Headers = () => {
               <div
                 onClick={() => {
                   if (window.confirm("로그인이 필요한 서비스입니다."))
-                    //웨 않돼?
                     navigate("/login");
                 }}
               >

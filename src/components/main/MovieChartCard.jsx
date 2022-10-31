@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 function MovieChartCard({ movie }) {
   const navigate = useNavigate();
-  let id = movie.id; // id는 movie.movie라는 데이터의 id와 같다고 선언
+  let id = movie.id; // id는 movie.movie라는 데이터의 id와 같다
   return (
     <div>
       <MovieCard>

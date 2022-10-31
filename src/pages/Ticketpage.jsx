@@ -3,10 +3,11 @@ import Headers from "../components/layout/Headers";
 import Ticket from "../components/bookmovie/Ticket";
 
 function Ticketpage() {
-  return (<div>
-    <Headers/ >
-    <Ticket/ >  
-  </div>
+  return (
+    <div>
+      <Headers />
+      <Ticket />
+    </div>
   );
 }
 

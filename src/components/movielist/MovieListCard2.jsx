@@ -23,15 +23,15 @@ const MovieListCard = () => {
   let Movienow = movies.filter((movies) => {
     return movies.status === 2;
   });
-  // console.log(Movienow);
+
   let Moviebefore = movies.filter((movies) => {
     return movies.status === 1;
   });
-  //   console.log(Moviebefore);
+
   let Movieafter = movies.filter((movies) => {
     return movies.status === 3;
   });
-  //   console.log(Movieafter);
+
   useEffect(() => {
     dispatch(getMovies());
   }, [dispatch]);
@@ -43,7 +43,7 @@ const MovieListCard = () => {
   if (error) {
     return <div>{error.message}</div>;
   }
-  //   console.log(Content);
+
   return (
     <Container>
       <Movielist>
@@ -51,9 +51,6 @@ const MovieListCard = () => {
           <h3>무비차트</h3>
         </Listheader>
         <Headercheckbox>
-          {/* <input type="checkbox"></input>
-          <p>현재 상영작만 보기</p> */}
-
           <select onChange={onChangeHandler} value={Content}>
             {Status.map((movies) => (
               <option status={movies.status} value={movies.status}>
@@ -135,29 +132,3 @@ const Headercheckbox = styled.div`
   margin: 15px;
   color: #424141;
 `;
-
-// {
-//   Content == 2
-//     ? Movienow.map((now) => {
-//         return (
-//           <MovieCard movie={now} key={now.id} id={now.id} status={now.status} />
-//         );
-//       })
-//     : Content == 1
-//     ? Moviebefore.map((before) => {
-//         <MovieCard
-//           movie={before}
-//           key={before.id}
-//           id={before.id}
-//           status={before.status}
-//         />;
-//       })
-//     : Movieafter.map((after) => {
-//         <MovieCard
-//           movie={after}
-//           key={after.id}
-//           id={after.id}
-//           status={after.status}
-//         />;
-//       });
-// }
