@@ -12,7 +12,7 @@ const MyWatchedMovie = () => {
   const login = localStorage.getItem("token"); // token 유무로 로그인 상태 판별하기
   useEffect(() => {
     login ? dispatch(getMypage()) : navigate("/login"); //로그인이 true이면 dispatch로 mylist를 불러오고 아니면 로그인페이지로 보낸다.
-  }, [dispatch]);
+  }, []);
 
   if (isLoading) {
     return <div>로딩 중....</div>;

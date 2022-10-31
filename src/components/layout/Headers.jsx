@@ -8,7 +8,6 @@ import { _logout } from "../../redux/modules/user";
 
 const Headers = () => {
   let navigate = useNavigate();
-  let dispatch = useDispatch();
   const userlogin = useSelector((state) => state.user);
   const logoutHandler = () => {
     window.alert("로그아웃 하시겠습니까?");
@@ -48,29 +47,31 @@ const Headers = () => {
               )}
             </li>
             {userlogin.is_Login ? (
-              <div>
+              <div
+                onClick={() => {
+                  navigate("/movielist");
+                }}
+              >
                 <li>
-                  <Img2 src="https://ifh.cc/g/jrsKHZ.png"></Img2>
+                  <Img2 src="https://ifh.cc/g/SaLz0J.png"></Img2>
                 </li>
               </div>
             ) : (
               <div
                 onClick={() => {
-                  alert("로그인이 필요한 서비스입니다."); //웨 않돼?
-                  navigate("/login");
+                  if (window.confirm("로그인이 필요한 서비스입니다."))
+                    navigate("/login");
                 }}
               >
                 <li>
-                  <Img2 src="https://ifh.cc/g/jrsKHZ.png"></Img2>
+                  <Img2 src="https://ifh.cc/g/SaLz0J.png"></Img2>
                 </li>
               </div>
             )}
-
             <li>
-              <a href="/movielist">
-                <Img2 src="https://ifh.cc/g/SaLz0J.png"></Img2>
-              </a>
+              <Img2 src="https://ifh.cc/g/jrsKHZ.png"></Img2>
             </li>
+
             <li>
               <Img2 src="https://ifh.cc/g/ZjnStG.png"></Img2>
             </li>
