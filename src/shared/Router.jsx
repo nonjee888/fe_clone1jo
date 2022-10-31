@@ -1,7 +1,6 @@
 import React from "react";
 import Main from "../pages/Main";
 import BookMovie from "../pages/BookMovie";
-import Admin from "../pages/Admin";
 import Loginpage from "../pages/Loginpage";
 import Detail from "../pages/Detail";
 import MyLikeList from "../pages/MyLikeList";
@@ -25,7 +24,6 @@ function Router() {
           <Route path="/moviechart" element={<MovieChartList />} exact />
           <Route path="/movielist" element={<MyMovieList />} exact />
           <Route path="/likelist" element={<MyLikeList />} exact />
-          <Route path="/admin" element={<Admin />} exact />
           <Route path="/seat" element={<Seat />} exact />
           <Route path="/ticket" element={<Ticketpage />} exact />
           <Route path="*" element={<div>없는 페이지입니다.</div>} />
