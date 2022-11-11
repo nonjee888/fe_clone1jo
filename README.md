@@ -37,7 +37,7 @@ BE: 정민우 박성수</br></br>
 
 # 🪜 [API 설계](https://www.notion.so/7-20f8aa17a6f4428c86a56ba9a5e7099c#7ff54f64a2bd4b4580c0e21c5f4237c6)
 
-# 🛠 [Truble Shooting:Front-end](https://nonjee888.tistory.com/54)
+# 🛠 [Truble Shooting : Front-end](https://nonjee888.tistory.com/54)
 
 # 🔮 시간이 더 있었다면 어떤 것을 더 할 수 있었을지
 
