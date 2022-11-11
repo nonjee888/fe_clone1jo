@@ -1,12 +1,8 @@
-# 1. 주제 소개
+# 🎬 CGV 클론코딩
 
-CGV 클론코딩
+# 🎥 [시연영상](https://youtu.be/2m26rEdvcxs)
 
-시연영상: https://youtu.be/2m26rEdvcxs
-
-CGV 웹 사이트 클론 코딩 
-
-기능 ————————————————————————
+# 🎯 MVP
 
 네이버 로그인
 
@@ -28,36 +24,31 @@ CGV 웹 사이트 클론 코딩
 
 좌석 선택하기
 
-발권 기능
+티켓 발권 </br></br>
  
----
 
-# 2. 팀원 정보
+# 🙌 팀원 정보
+FE: 노은지 김보미 임다은
+BE: 정민우 박성수</br></br>
 
-임다은 노은지 김보미 정민우 박성수
+# 💡 Wire Frame
 
-# 3. WireFrame
+![클론코딩 와이어프레임](https://user-images.githubusercontent.com/106578705/198751032-6a3cd67a-7ac0-40c3-8527-8a5d5d69c50d.png)</br></br>
 
-![클론코딩 와이어프레임](https://user-images.githubusercontent.com/106578705/198751032-6a3cd67a-7ac0-40c3-8527-8a5d5d69c50d.png)
+# 🪜[API 설계](https://www.notion.so/7-20f8aa17a6f4428c86a56ba9a5e7099c#7ff54f64a2bd4b4580c0e21c5f4237c6)</br></br>
 
-# 4. API 설계 
+# 🛠[Truble Shooting:Front-end](https://nonjee888.tistory.com/54)</br></br>
 
-https://www.notion.so/7-20f8aa17a6f4428c86a56ba9a5e7099c#7ff54f64a2bd4b4580c0e21c5f4237c6
+# 🔮 시간이 더 있었다면 어떤 것을 더 할 수 있었을지
 
-# 5. Truble Shooting (Front-end)
+🖥 프론트
 
-https://nonjee888.tistory.com/54
+1. 헤더 네비게이션바 마우스오버시 메뉴 드롭 다운되면서 펼쳐지는 기능.
 
-## 앞으로 시간이 더 있었다면 어떤 것을 더 할 수 있었을지
+2. 무한스크롤
 
-### 프론트
+💻 백엔드
 
-### 1. 헤더 네비게이션바 마우스오버시 메뉴 드롭 다운되면서 펼쳐지는 기능.
+1. 네이버,카카오에서 성별,연령을 받아서 예매율 통계 내기
 
-### 2. 무한스크롤
-
-### 백엔드
-
-### 1. 네이버,카카오에서 성별,연령을 받아서 예매율 통계 내기
-
-### 2. 구글 로그인
+2. 구글 로그인
